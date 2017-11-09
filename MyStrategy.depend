@@ -1,0 +1,335 @@
+# depslib dependency file v1.0
+1500288723 source:/home/daneel/prog/ai/CodeWars/solution/csimplesocket/ActiveSocket.cpp
+	"ActiveSocket.h"
+
+1500288723 /home/daneel/prog/ai/CodeWars/solution/csimplesocket/ActiveSocket.h
+	"SimpleSocket.h"
+
+1500288723 /home/daneel/prog/ai/CodeWars/solution/csimplesocket/SimpleSocket.h
+	<sys/stat.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<errno.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netinet/tcp.h>
+	<netinet/ip.h>
+	<netdb.h>
+	<linux/if_packet.h>
+	<linux/if_packet.h>
+	<linux/if_ether.h>
+	<linux/if.h>
+	<sys/sendfile.h>
+	<sys/time.h>
+	<sys/uio.h>
+	<unistd.h>
+	<fcntl.h>
+	<io.h>
+	<winsock2.h>
+	<Ws2tcpip.h>
+	"Host.h"
+	"StatTimer.h"
+
+1500288723 /home/daneel/prog/ai/CodeWars/solution/csimplesocket/Host.h
+	<limits.h>
+
+1500288723 /home/daneel/prog/ai/CodeWars/solution/csimplesocket/StatTimer.h
+	<string.h>
+	<Winsock2.h>
+	<time.h>
+	<stdio.h>
+	<sys/time.h>
+	"Host.h"
+	<cstdint>
+
+1500288723 source:/home/daneel/prog/ai/CodeWars/solution/csimplesocket/HTTPActiveSocket.cpp
+
+1500288723 source:/home/daneel/prog/ai/CodeWars/solution/csimplesocket/PassiveSocket.cpp
+	"PassiveSocket.h"
+
+1500288723 /home/daneel/prog/ai/CodeWars/solution/csimplesocket/PassiveSocket.h
+	"ActiveSocket.h"
+
+1500288723 source:/home/daneel/prog/ai/CodeWars/solution/csimplesocket/SimpleSocket.cpp
+	"SimpleSocket.h"
+
+1510262414 source:/home/daneel/prog/ai/CodeWars/solution/Enviroment.cpp
+	"Enviroment.hpp"
+	<vector>
+
+1510089825 source:/home/daneel/prog/ai/CodeWars/solution/MagicConst.cpp
+
+1510091573 source:/home/daneel/prog/ai/CodeWars/solution/main.cpp
+	<iostream>
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/CircularUnit.cpp
+	"CircularUnit.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/CircularUnit.h
+	"Unit.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/Unit.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/Facility.cpp
+	"Facility.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/Facility.h
+	"FacilityType.h"
+	"VehicleType.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/FacilityType.h
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/VehicleType.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/Game.cpp
+	"Game.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/Game.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/Move.cpp
+	"Move.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/Move.h
+	"ActionType.h"
+	"VehicleType.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/ActionType.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/Player.cpp
+	"Player.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/Player.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/PlayerContext.cpp
+	"PlayerContext.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/PlayerContext.h
+	"Player.h"
+	"World.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/World.h
+	<vector>
+	"Facility.h"
+	"Player.h"
+	"TerrainType.h"
+	"Vehicle.h"
+	"VehicleUpdate.h"
+	"WeatherType.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/TerrainType.h
+
+1509812718 /home/daneel/prog/ai/CodeWars/solution/model/Vehicle.h
+	<vector>
+	"CircularUnit.h"
+	"VehicleUpdate.h"
+	"VehicleType.h"
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/VehicleUpdate.h
+	<vector>
+
+1509808483 /home/daneel/prog/ai/CodeWars/solution/model/WeatherType.h
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/Unit.cpp
+	"Unit.h"
+	<cmath>
+
+1509812718 source:/home/daneel/prog/ai/CodeWars/solution/model/Vehicle.cpp
+	"Vehicle.h"
+	"VehicleUpdate.h"
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/VehicleUpdate.cpp
+	"VehicleUpdate.h"
+
+1509808483 source:/home/daneel/prog/ai/CodeWars/solution/model/World.cpp
+	"World.h"
+
+1510253731 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
+	"MyStrategy.h"
+	"MagicConsts.hpp"
+	"GroupingService.hpp"
+	"GotoAngleService.hpp"
+	<iostream>
+
+1510242523 /home/daneel/prog/ai/CodeWars/solution/MyStrategy.h
+	"Strategy.h"
+	"ServiceManager.hpp"
+	"Enviroment.hpp"
+
+1509810671 /home/daneel/prog/ai/CodeWars/solution/Strategy.h
+	"model/Game.h"
+	"model/Move.h"
+	"model/World.h"
+
+1510247532 /home/daneel/prog/ai/CodeWars/solution/ServiceManager.hpp
+	"TaskManager.hpp"
+	"Service.hpp"
+	"Enviroment.hpp"
+	"ActionLimitor.hpp"
+	<vector>
+
+1510240616 /home/daneel/prog/ai/CodeWars/solution/TaskManager.hpp
+	"Task.hpp"
+	"ActionManager.hpp"
+	<queue>
+
+1510242732 /home/daneel/prog/ai/CodeWars/solution/Task.hpp
+	"Task.hpp"
+	"Enviroment.hpp"
+	"ActionManager.hpp"
+	"GroupManager.hpp"
+
+1510250909 /home/daneel/prog/ai/CodeWars/solution/Service.hpp
+	"TaskManager.hpp"
+	"Enviroment.hpp"
+	"ActionManager.hpp"
+	"GroupManager.hpp"
+
+1510243790 /home/daneel/prog/ai/CodeWars/solution/Enviroment.hpp
+	"MoveHelper.hpp"
+	"model/TerrainType.h"
+	"model/WeatherType.h"
+	"model/Player.h"
+	"model/World.h"
+	"model/Game.h"
+	"model/Move.h"
+	"model/Facility.h"
+	<vector>
+	"Data.hpp"
+	"MagicConsts.hpp"
+	"VehicleManager.hpp"
+	"StateType.hpp"
+	"ActiveType.hpp"
+
+1509820313 source:/home/daneel/prog/ai/CodeWars/solution/RemoteProcessClient.cpp
+	"RemoteProcessClient.h"
+	<algorithm>
+	<cstdlib>
+	<memory>
+
+1509815558 /home/daneel/prog/ai/CodeWars/solution/RemoteProcessClient.h
+	<memory>
+	<string>
+	<unordered_map>
+	<vector>
+	"csimplesocket/ActiveSocket.h"
+	"model/Game.h"
+	"model/Move.h"
+	"model/PlayerContext.h"
+	"model/World.h"
+
+1509812222 source:/home/daneel/prog/ai/CodeWars/solution/Runner.cpp
+	"Runner.h"
+	<memory>
+	"MyStrategy.h"
+
+1500288721 /home/daneel/prog/ai/CodeWars/solution/Runner.h
+	<string>
+	"RemoteProcessClient.h"
+
+1510091121 source:/home/daneel/prog/ai/CodeWars/solution/Service.cpp
+
+1510258215 source:/home/daneel/prog/ai/CodeWars/solution/ServiceManager.cpp
+	"ServiceManager.hpp"
+	"ActiveType.hpp"
+
+1500288721 source:/home/daneel/prog/ai/CodeWars/solution/Strategy.cpp
+	"Strategy.h"
+
+1510089985 source:/home/daneel/prog/ai/CodeWars/solution/Task.cpp
+
+1510249351 source:/home/daneel/prog/ai/CodeWars/solution/TaskManager.cpp
+	"TaskManager.hpp"
+
+1510241510 /home/daneel/prog/ai/CodeWars/solution/MoveHelper.hpp
+	"model/Move.h"
+
+1510241531 source:/home/daneel/prog/ai/CodeWars/solution/MoveHelper.cpp
+	"MoveHelper.hpp"
+	"IlligalStateException.hpp"
+
+1510175602 /home/daneel/prog/ai/CodeWars/solution/IlligalStateException.hpp
+	<exception>
+
+1510245763 source:/home/daneel/prog/ai/CodeWars/solution/MagicConsts.cpp
+	"MagicConsts.hpp"
+
+1510245657 /home/daneel/prog/ai/CodeWars/solution/MagicConsts.hpp
+
+1510262824 source:/home/daneel/prog/ai/CodeWars/solution/VehicleManager.cpp
+	"VehicleManager.hpp"
+	"model/VehicleType.h"
+
+1510253516 /home/daneel/prog/ai/CodeWars/solution/VehicleManager.hpp
+	"model/Vehicle.h"
+	"model/VehicleUpdate.h"
+	<map>
+
+1510255596 source:/home/daneel/prog/ai/CodeWars/solution/ActionManager.cpp
+	"ActionManager.hpp"
+	"InvalidAngleException.hpp"
+	<iostream>
+
+1510255437 /home/daneel/prog/ai/CodeWars/solution/ActionManager.hpp
+	"model/Move.h"
+	"MoveHelper.hpp"
+	<queue>
+
+1510261510 source:/home/daneel/prog/ai/CodeWars/solution/GroupManager.cpp
+	"GroupManager.hpp"
+	"Repos.hpp"
+
+1510177376 /home/daneel/prog/ai/CodeWars/solution/InvalidAngleException.hpp
+	<exception>
+
+1510261485 /home/daneel/prog/ai/CodeWars/solution/GroupManager.hpp
+	<map>
+	<set>
+	<string>
+	"ActionManager.hpp"
+	"Enviroment.hpp"
+	"model/VehicleType.h"
+
+1510243891 source:/home/daneel/prog/ai/CodeWars/solution/Data.cpp
+	"Data.hpp"
+
+1510259561 source:/home/daneel/prog/ai/CodeWars/solution/ActionLimitor.cpp
+	"ActionLimitor.hpp"
+
+1510258026 /home/daneel/prog/ai/CodeWars/solution/ActionLimitor.hpp
+	"Enviroment.hpp"
+	<queue>
+
+1510239618 /home/daneel/prog/ai/CodeWars/solution/StateType.hpp
+
+1510187151 /home/daneel/prog/ai/CodeWars/solution/ActiveType.hpp
+
+1510243812 /home/daneel/prog/ai/CodeWars/solution/Data.hpp
+	<string>
+	<map>
+
+1510262803 source:/home/daneel/prog/ai/CodeWars/solution/GroupingService.cpp
+	"GroupingService.hpp"
+	"model/Vehicle.h"
+	<map>
+	"Repos.hpp"
+
+1510251081 /home/daneel/prog/ai/CodeWars/solution/GroupingService.hpp
+	"Service.hpp"
+
+1510260576 source:/home/daneel/prog/ai/CodeWars/solution/GotoAngleService.cpp
+	"GotoAngleService.hpp"
+
+1510253187 /home/daneel/prog/ai/CodeWars/solution/GotoAngleService.hpp
+	"Service.hpp"
+
+1510259650 /home/daneel/prog/ai/CodeWars/solution/Repos.hpp
+	"ActionManager.hpp"
+	"model/Vehicle.h"
+	<map>
+	<vector>
+
+1510260459 source:/home/daneel/prog/ai/CodeWars/solution/Repos.cpp
+	"Repos.hpp"
+

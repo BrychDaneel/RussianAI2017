@@ -1,0 +1,6 @@
+csimplesocket/PassiveSocket.cpp: In member function ‘bool CPassiveSocket::BindMulticast(const uint8_t*, const uint8_t*, int16_t)’:
+csimplesocket/PassiveSocket.cpp:57:20: warning: variable ‘nReuse’ set but not used [-Wunused-but-set-variable]
+     int32          nReuse;
+                    ^
+/tmp/ccZbjZmD.o: In function `CActiveSocket::ConnectTCP(unsigned char const*, short)':
+ActiveSocket.cpp:(.text+0x61): warning: Using 'gethostbyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking

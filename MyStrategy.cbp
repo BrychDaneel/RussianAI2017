@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MyStrategy" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MyStrategy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-std=c++14" />
+					<Add option="-g" />
+					<Add option="-static" />
+					<Add option="-fno-optimize-sibling-calls" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-s" />
+					<Add option="-lm" />
+					<Add option="-x c++" />
+					<Add option="-Wtype-limits" />
+					<Add option="-Wno-unknown-pragmas" />
+					<Add option="-D_LINUX" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MyStrategy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ActionLimitor.cpp" />
+		<Unit filename="ActionLimitor.hpp" />
+		<Unit filename="ActionManager.cpp" />
+		<Unit filename="ActionManager.hpp" />
+		<Unit filename="ActiveType.hpp" />
+		<Unit filename="Data.cpp" />
+		<Unit filename="Data.hpp" />
+		<Unit filename="Enviroment.cpp" />
+		<Unit filename="Enviroment.hpp" />
+		<Unit filename="GotoAngleService.cpp" />
+		<Unit filename="GotoAngleService.hpp" />
+		<Unit filename="GroupManager.cpp" />
+		<Unit filename="GroupManager.hpp" />
+		<Unit filename="GroupingService.cpp" />
+		<Unit filename="GroupingService.hpp" />
+		<Unit filename="IlligalStateException.hpp" />
+		<Unit filename="MagicConsts.cpp" />
+		<Unit filename="MagicConsts.hpp" />
+		<Unit filename="MoveHelper.cpp" />
+		<Unit filename="MoveHelper.hpp" />
+		<Unit filename="MyStrategy.cpp" />
+		<Unit filename="MyStrategy.h" />
+		<Unit filename="RemoteProcessClient.cpp" />
+		<Unit filename="RemoteProcessClient.h" />
+		<Unit filename="Repos.cpp" />
+		<Unit filename="Repos.hpp" />
+		<Unit filename="Runner.cpp" />
+		<Unit filename="Runner.h" />
+		<Unit filename="Service.hpp" />
+		<Unit filename="ServiceManager.cpp" />
+		<Unit filename="ServiceManager.hpp" />
+		<Unit filename="StateType.hpp" />
+		<Unit filename="Strategy.cpp" />
+		<Unit filename="Strategy.h" />
+		<Unit filename="Task.hpp" />
+		<Unit filename="TaskManager.cpp" />
+		<Unit filename="TaskManager.hpp" />
+		<Unit filename="VehicleManager.cpp" />
+		<Unit filename="VehicleManager.hpp" />
+		<Unit filename="csimplesocket/ActiveSocket.cpp" />
+		<Unit filename="csimplesocket/ActiveSocket.h" />
+		<Unit filename="csimplesocket/HTTPActiveSocket.cpp" />
+		<Unit filename="csimplesocket/HTTPActiveSocket.h" />
+		<Unit filename="csimplesocket/Host.h" />
+		<Unit filename="csimplesocket/PassiveSocket.cpp" />
+		<Unit filename="csimplesocket/PassiveSocket.h" />
+		<Unit filename="csimplesocket/SimpleSocket.cpp" />
+		<Unit filename="csimplesocket/SimpleSocket.h" />
+		<Unit filename="csimplesocket/StatTimer.h" />
+		<Unit filename="model/ActionType.h" />
+		<Unit filename="model/CircularUnit.cpp" />
+		<Unit filename="model/CircularUnit.h" />
+		<Unit filename="model/Facility.cpp" />
+		<Unit filename="model/Facility.h" />
+		<Unit filename="model/FacilityType.h" />
+		<Unit filename="model/Game.cpp" />
+		<Unit filename="model/Game.h" />
+		<Unit filename="model/Move.cpp" />
+		<Unit filename="model/Move.h" />
+		<Unit filename="model/Player.cpp" />
+		<Unit filename="model/Player.h" />
+		<Unit filename="model/PlayerContext.cpp" />
+		<Unit filename="model/PlayerContext.h" />
+		<Unit filename="model/TerrainType.h" />
+		<Unit filename="model/Unit.cpp" />
+		<Unit filename="model/Unit.h" />
+		<Unit filename="model/Vehicle.cpp" />
+		<Unit filename="model/Vehicle.h" />
+		<Unit filename="model/VehicleType.h" />
+		<Unit filename="model/VehicleUpdate.cpp" />
+		<Unit filename="model/VehicleUpdate.h" />
+		<Unit filename="model/WeatherType.h" />
+		<Unit filename="model/World.cpp" />
+		<Unit filename="model/World.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

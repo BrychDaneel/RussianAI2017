@@ -7,35 +7,35 @@
     #include <iostream>
     void print(model::ActionType type){
         switch (type){
-            case model::ActionType::ACTION_NONE:
-                std::cout<<"ACTION_NONE";
+            case model::ActionType::NONE:
+                std::cout<<"NONE";
                 break;
-            case model::ActionType::ACTION_CLEAR_AND_SELECT:
-                std::cout<<"ACTION_CLEAR_AND_SELECT";
+            case model::ActionType::CLEAR_AND_SELECT:
+                std::cout<<"CLEAR_AND_SELECT";
                 break;
-            case model::ActionType::ACTION_ADD_TO_SELECTION:
-                std::cout<<"ACTION_ADD_TO_SELECTION";
+            case model::ActionType::ADD_TO_SELECTION:
+                std::cout<<"ADD_TO_SELECTION";
                 break;
-            case model::ActionType::ACTION_DESELECT:
-                std::cout<<"ACTION_DESELECT";
+            case model::ActionType::DESELECT:
+                std::cout<<"DESELECT";
                 break;
-            case model::ActionType::ACTION_ASSIGN :
-                std::cout<<"ACTION_ASSIGN";
+            case model::ActionType::ASSIGN :
+                std::cout<<"ASSIGN";
                 break;
-            case model::ActionType::ACTION_DISMISS:
-                std::cout<<"ACTION_DISMISS";
+            case model::ActionType::DISMISS:
+                std::cout<<"DISMISS";
                 break;
-            case model::ActionType::ACTION_DISBAND:
-                std::cout<<"ACTION_DISBAND";
+            case model::ActionType::DISBAND:
+                std::cout<<"DISBAND";
                 break;
-            case model::ActionType::ACTION_MOVE:
-                std::cout<<"ACTION_MOVE";
+            case model::ActionType::MOVE:
+                std::cout<<"MOVE";
                 break;
-            case model::ActionType::ACTION_ROTATE:
-                std::cout<<"ACTION_ROTATE";
+            case model::ActionType::ROTATE:
+                std::cout<<"ROTATE";
                 break;
-            case model::ActionType::ACTION_SETUP_VEHICLE_PRODUCTION:
-                std::cout<<"ACTION_SETUP_VEHICLE_PRODUCTION";
+            case model::ActionType::SETUP_VEHICLE_PRODUCTION:
+                std::cout<<"SETUP_VEHICLE_PRODUCTION";
                 break;
             default:
                 std::cout<<"ERROR";
@@ -54,7 +54,7 @@ namespace my{
         if (actions.empty())
             return false;
 
-        if (actions.front().getAction() == model::ActionType::ACTION_NONE)
+        if (actions.front().getAction() == model::ActionType::NONE)
             isNope = true;
         else
             isNope = false;
@@ -72,18 +72,18 @@ namespace my{
     }
 
     void ActionManager::actionOrNope(){
-        if (ActionManager::empty())
+        if (empty())
             nope();
         action();
     }
 
     void ActionManager::sendNope(){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_NONE);
+        move.setAction(model::ActionType::NONE);
         moveHelper.assign(move);
         isNope = true;
         #ifdef DEBUG
-           print(model::ActionType::ACTION_NONE);
+           print(model::ActionType::NONE);
         #endif
     }
 
@@ -93,12 +93,12 @@ namespace my{
 
     void ActionManager::nope(){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_NONE);
+        move.setAction(model::ActionType::NONE);
         actions.push(move);
     }
 
     void ActionManager::NopeOrNope(){
-        if (actions.front().getAction() == model::ActionType::ACTION_NONE)
+        if (!empty() && actions.front().getAction() == model::ActionType::NONE)
             action();
         else
             sendNope();
@@ -106,7 +106,7 @@ namespace my{
 
     void ActionManager::select(const double left, const double top, const double right, const double bottom){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_CLEAR_AND_SELECT);
+        move.setAction(model::ActionType::CLEAR_AND_SELECT);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -116,7 +116,7 @@ namespace my{
 
     void ActionManager::select(const double left, const double top, const double right, const double bottom, const model::VehicleType type){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_CLEAR_AND_SELECT);
+        move.setAction(model::ActionType::CLEAR_AND_SELECT);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -127,14 +127,14 @@ namespace my{
 
     void ActionManager::select(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_CLEAR_AND_SELECT);
+        move.setAction(model::ActionType::CLEAR_AND_SELECT);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::add(const double left, const double top, const double right, const double bottom){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ADD_TO_SELECTION);
+        move.setAction(model::ActionType::ADD_TO_SELECTION);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -144,7 +144,7 @@ namespace my{
 
     void ActionManager::add(const double left, const double top, const double right, const double bottom, const model::VehicleType type){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ADD_TO_SELECTION);
+        move.setAction(model::ActionType::ADD_TO_SELECTION);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -155,14 +155,14 @@ namespace my{
 
     void ActionManager::add(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ADD_TO_SELECTION);
+        move.setAction(model::ActionType::ADD_TO_SELECTION);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::deselect(const double left, const double top, const double right, const double bottom){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_DESELECT);
+        move.setAction(model::ActionType::DESELECT);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -172,7 +172,7 @@ namespace my{
 
     void ActionManager::deselect(const double left, const double top, const double right, const double bottom, const model::VehicleType type){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_DESELECT);
+        move.setAction(model::ActionType::DESELECT);
         move.setLeft(left);
         move.setTop(top);
         move.setRight(right);
@@ -183,35 +183,35 @@ namespace my{
 
     void ActionManager::deselect(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_DESELECT);
+        move.setAction(model::ActionType::DESELECT);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::assign(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ASSIGN);
+        move.setAction(model::ActionType::ASSIGN);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::dismiss(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_DISMISS);
+        move.setAction(model::ActionType::DISMISS);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::disband(const int groupId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_DISBAND);
+        move.setAction(model::ActionType::DISBAND);
         move.setGroup(groupId);
         actions.push(move);
     }
 
     void ActionManager::move(const double dx, const double dy){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_MOVE);
+        move.setAction(model::ActionType::MOVE);
         move.setX(dx);
         move.setY(dy);
         actions.push(move);
@@ -219,7 +219,7 @@ namespace my{
 
     void ActionManager::move(const double dx, const double dy, const double maxSpeed){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_MOVE);
+        move.setAction(model::ActionType::MOVE);
         move.setX(dx);
         move.setY(dy);
         move.setMaxSpeed(maxSpeed);
@@ -232,7 +232,7 @@ namespace my{
             throw exc;
         }
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ROTATE);
+        move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
         actions.push(move);
@@ -244,7 +244,7 @@ namespace my{
             throw exc;
         }
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ROTATE);
+        move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
         move.setMaxSpeed(maxSpeed);
@@ -257,7 +257,7 @@ namespace my{
             throw exc;
         }
         model::Move move;
-        move.setAction(model::ActionType::ACTION_ROTATE);
+        move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
         move.setMaxAngularSpeed(maxAngularSpeed);
@@ -266,7 +266,7 @@ namespace my{
 
     void ActionManager::product(long facilityId, model::VehicleType vehicleType){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_SETUP_VEHICLE_PRODUCTION);
+        move.setAction(model::ActionType::SETUP_VEHICLE_PRODUCTION);
         move.setFacilityId(facilityId);
         move.setVehicleType(vehicleType);
         actions.push(move);
@@ -274,7 +274,7 @@ namespace my{
 
     void ActionManager::stopProduct(long facilityId){
         model::Move move;
-        move.setAction(model::ActionType::ACTION_SETUP_VEHICLE_PRODUCTION);
+        move.setAction(model::ActionType::SETUP_VEHICLE_PRODUCTION);
         move.setFacilityId(facilityId);
         actions.push(move);
     }

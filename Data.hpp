@@ -15,6 +15,7 @@ namespace my{
             ~Data();
             void put(const std::string name, void * value);
             void* get(const std::string name);
+            void remove(const std::string name);
     };
 }
 

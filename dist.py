@@ -3,7 +3,9 @@ import os
 
 
 EXTS = ['*.cpp', '*.hpp', '*.h']
-RABISH = ['RemoteProcessClient.cpp', 'RemoteProcessClient.h', 'Strategy.h']
+RABISH = ['RemoteProcessClient.cpp', 'RemoteProcessClient.h',
+          'Runner.cpp', 'Runner.h', 
+          'Strategy.h', 'Strategy.cpp']
 
 
 
@@ -21,6 +23,7 @@ def get_files():
 
 def make_dist():
     files = get_files()
+    os.system('rm dist/dist.zip ')
     os.system('zip dist/dist.zip ' + ' '.join(files))
 
 

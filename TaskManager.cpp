@@ -28,8 +28,10 @@ namespace my{
         bool used = false;
         do{
             used = tasks.front()->action();
-            delete tasks.front();
-            tasks.pop();
+            if (!used){
+                delete tasks.front();
+                tasks.pop();
+            }
         } while (!used && !tasks.empty());
 
         return used;

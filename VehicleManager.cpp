@@ -34,19 +34,19 @@ namespace my{
             if (vehicle.getPlayerId() == myId){
                 result.push_back(&my);
                 switch (vehicle.getType()){
-                    case model::VehicleType::VEHICLE_ARRV:
+                    case model::VehicleType::ARRV:
                         result.push_back(&myArrvs);
                         break;
-                    case model::VehicleType::VEHICLE_FIGHTER:
+                    case model::VehicleType::FIGHTER:
                         result.push_back(&myFighters);
                         break;
-                    case model::VehicleType::VEHICLE_HELICOPTER:
+                    case model::VehicleType::HELICOPTER:
                         result.push_back(&myHelicopters);
                         break;
-                    case model::VehicleType::VEHICLE_IFV:
+                    case model::VehicleType::IFV:
                         result.push_back(&myIFVs);
                         break;
-                    case model::VehicleType::VEHICLE_TANK:
+                    case model::VehicleType::TANK:
                         result.push_back(&myTanks);
                         break;
                     default:
@@ -55,19 +55,19 @@ namespace my{
             } else {
                 result.push_back(&enemys);
                 switch (vehicle.getType()){
-                    case model::VehicleType::VEHICLE_ARRV:
+                    case model::VehicleType::ARRV:
                         result.push_back(&enemyArrvs);
                         break;
-                    case model::VehicleType::VEHICLE_FIGHTER:
+                    case model::VehicleType::FIGHTER:
                         result.push_back(&enemyFighters);
                         break;
-                    case model::VehicleType::VEHICLE_HELICOPTER:
+                    case model::VehicleType::HELICOPTER:
                         result.push_back(&enemyHelicopters);
                         break;
-                    case model::VehicleType::VEHICLE_IFV:
+                    case model::VehicleType::IFV:
                         result.push_back(&enemyIFVs);
                         break;
-                    case model::VehicleType::VEHICLE_TANK:
+                    case model::VehicleType::TANK:
                         result.push_back(&enemyTanks);
                         break;
                     default:
@@ -77,40 +77,43 @@ namespace my{
             return result;
     }
 
-    const std::map<long long, model::Vehicle> VehicleManager::getMy() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getAll() const{
+        return vehicleMap;
+    }
+    const std::map<long long, model::Vehicle>& VehicleManager::getMy() const{
         return my;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getEnemy() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getEnemy() const{
         return enemys;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getmyTanks() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getmyTanks() const{
         return myTanks;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getmyIFVs() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getmyIFVs() const{
         return myIFVs;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getmyHelicopters() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getmyHelicopters() const{
         return myHelicopters;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getmyFighters() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getmyFighters() const{
         return myFighters;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getmyArrvs() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getmyArrvs() const{
         return myArrvs;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getenemyTanks() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getenemyTanks() const{
         return enemyTanks;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getenemyIFVs() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getenemyIFVs() const{
         return enemyIFVs;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getenemyHelicopters() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getenemyHelicopters() const{
         return enemyHelicopters;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getenemyFighters() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getenemyFighters() const{
         return enemyFighters;
     }
-    const std::map<long long, model::Vehicle> VehicleManager::getenemyArrvs() const{
+    const std::map<long long, model::Vehicle>& VehicleManager::getenemyArrvs() const{
         return enemyArrvs;
     }
 }

@@ -1,13 +1,20 @@
 #include "GotoAngleService.hpp"
 
 
+#include "AsyncMoveTask.hpp"
+#include "ChangeStateTask.hpp"
+
+
 namespace my{
     bool GotoAngleService::action(){
+        if (env->getState() != StateType::Idle)
+            return false;
+
         int width = env->getGame()->getWorldWidth();
         int height = env->getGame()->getWorldHeight();
 
-        actionManager->select(0, 0, width, height);
-        actionManager->move(width, height, 0.4 * 0.6);
+        taskManager->addTask(new ChangeStateTask(StateType::Attack));
+        taskManager->addTask(new AsyncMoveTask("All", width, height, 0.4*0.6));
         return true;
     }
 

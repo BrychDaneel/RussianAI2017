@@ -5,6 +5,7 @@
 		<Option title="MyStrategy" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="my/;my/Headers/;my/Sources/;my/Headers/Services/;my/Headers/Tasks/;my/Sources/Services/;my/Sources/Tasks/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/MyStrategy" prefix_auto="1" extension_auto="1" />
@@ -34,6 +35,17 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++14" />
+					<Add option="-static" />
+					<Add option="-fno-optimize-sibling-calls" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-D_LINUX" />
+					<Add option="-lm" />
+					<Add option="-s" />
+					<Add option="-x c++" />
+					<Add option="-Wall" />
+					<Add option="-Wtype-limits" />
+					<Add option="-Wno-unknown-pragmas" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,45 +56,170 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ActionLimitor.cpp" />
-		<Unit filename="ActionLimitor.hpp" />
-		<Unit filename="ActionManager.cpp" />
-		<Unit filename="ActionManager.hpp" />
-		<Unit filename="ActiveType.hpp" />
-		<Unit filename="Data.cpp" />
-		<Unit filename="Data.hpp" />
-		<Unit filename="Enviroment.cpp" />
-		<Unit filename="Enviroment.hpp" />
-		<Unit filename="GotoAngleService.cpp" />
-		<Unit filename="GotoAngleService.hpp" />
-		<Unit filename="GroupManager.cpp" />
-		<Unit filename="GroupManager.hpp" />
-		<Unit filename="GroupingService.cpp" />
-		<Unit filename="GroupingService.hpp" />
-		<Unit filename="IlligalStateException.hpp" />
-		<Unit filename="MagicConsts.cpp" />
-		<Unit filename="MagicConsts.hpp" />
-		<Unit filename="MoveHelper.cpp" />
-		<Unit filename="MoveHelper.hpp" />
+		<Unit filename="ActionLimitor.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="ActionLimitor.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="ActionManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="ActionManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="ActiveType.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="AsyncMoveTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="AsyncMoveTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="AttackService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="AttackService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="BaseBindService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="BaseBindService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="ChangeStateTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="ChangeStateTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="DamageManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="DamageManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="Data.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="Data.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="EnemySearchService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="EnemySearchService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="Enviroment.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="Enviroment.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="FightDetectorService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="FightDetectorService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="GotoAngleService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="GotoAngleService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="GroupManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="GroupManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="GroupingService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="GroupingService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="IlligalStateException.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="InvalidAngleException.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="MagicConsts.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="MagicConsts.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="MoveHelper.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="MoveHelper.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Unit filename="MyStrategy.cpp" />
 		<Unit filename="MyStrategy.h" />
 		<Unit filename="RemoteProcessClient.cpp" />
 		<Unit filename="RemoteProcessClient.h" />
-		<Unit filename="Repos.cpp" />
-		<Unit filename="Repos.hpp" />
+		<Unit filename="Repos.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="Repos.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Unit filename="Runner.cpp" />
 		<Unit filename="Runner.h" />
-		<Unit filename="Service.hpp" />
-		<Unit filename="ServiceManager.cpp" />
-		<Unit filename="ServiceManager.hpp" />
-		<Unit filename="StateType.hpp" />
+		<Unit filename="Service.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="ServiceManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="ServiceManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="SpeedBarrierTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="SpeedBarrierTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="SpeedManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="SpeedManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="StateType.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="StopTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="StopTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="Strategy.cpp" />
 		<Unit filename="Strategy.h" />
-		<Unit filename="Task.hpp" />
-		<Unit filename="TaskManager.cpp" />
-		<Unit filename="TaskManager.hpp" />
-		<Unit filename="VehicleManager.cpp" />
-		<Unit filename="VehicleManager.hpp" />
+		<Unit filename="Task.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="TaskManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="TaskManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="VehicleManager.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="VehicleManager.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Unit filename="csimplesocket/ActiveSocket.cpp" />
 		<Unit filename="csimplesocket/ActiveSocket.h" />
 		<Unit filename="csimplesocket/HTTPActiveSocket.cpp" />

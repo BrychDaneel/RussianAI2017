@@ -1,26 +1,23 @@
 #pragma once
-#ifndef _MY_GOTO_ANGLE_SERVICE_HPP_
-#define _MY_GOTO_ANGLE_SERVICE_HPP_
+#ifndef _MY_ATTACK_SERVICE_HPP_
+#define _MY_ATTACK_SERVICE_HPP_
 
 
 #include "Service.hpp"
+#include "VehicleManager.hpp"
 
 
 namespace my{
-    class GotoAngleService : public Service{
+    class AttackService : public Service{
         private:
             Enviroment* env;
-            TaskManager* taskManager;
-            ActionManager* actionManager;
-            GroupManager* groupManager;
-            const int RATE = 30;
+            TaskManager * taskManager;
+            const int RATE = 60;
 
         public:
             virtual bool action();
             virtual int getRate();
             virtual void setup(Enviroment& env, TaskManager& taskManager, ActionManager& actionManager, GroupManager& groupManager);
-            virtual ~GotoAngleService();
     };
 }
 #endif
-

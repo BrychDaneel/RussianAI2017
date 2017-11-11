@@ -17,6 +17,8 @@
 #include "VehicleManager.hpp"
 #include "StateType.hpp"
 #include "ActiveType.hpp"
+#include "SpeedManager.hpp"
+#include "DamageManager.hpp"
 
 
 using std::vector;
@@ -36,11 +38,13 @@ namespace my{
             const MagicConsts& magicConsts;
             MoveHelper moveHelper;
             VehicleManager* vehicleManager = nullptr;
+            SpeedManager speedManager;
+            DamageManager damageManager;
             Data data;
             bool first = true;
 
-            StateType state = StateType::Unknown;
-            ActiveType active = ActiveType::Normal;
+            StateType state;
+            ActiveType active;
 
             void firstRun();
 
@@ -54,6 +58,8 @@ namespace my{
             model::WeatherType getWeather(const int x, const int y);
 
             const VehicleManager* getVehicleManager();
+            const DamageManager& getDamageManager();
+            const SpeedManager& getSpeedManager();
             const MagicConsts& getMagicConsts();
 
             MoveHelper& getMoveHelper();
@@ -69,6 +75,7 @@ namespace my{
             void setState(const StateType state);
 
             void putData(const string name, void * value);
+            void removeData(const string name);
             void* getData(const string name);
     };
 }

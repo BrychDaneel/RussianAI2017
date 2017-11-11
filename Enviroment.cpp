@@ -15,17 +15,24 @@ namespace my{
             first = false;
         }
 
+        std::vector<model::VehicleUpdate> updates = world.getVehicleUpdates();
         std::vector<model::Vehicle> newVehicles = world.getNewVehicles();
+
+        speedManager.update(vehicleManager->getAll(), me.getId(), updates);
+        damageManager.update(vehicleManager->getAll(), updates);
+
         for (size_t i=0; i<newVehicles.size(); i++)
             vehicleManager->add(newVehicles[i]);
 
-        std::vector<model::VehicleUpdate> updates = world.getVehicleUpdates();
         for (size_t i=0; i<updates.size(); i++)
             vehicleManager->update(updates[i]);
     }
 
     Enviroment::Enviroment(const MagicConsts& magicConsts):
-        magicConsts(magicConsts)
+        magicConsts(magicConsts),
+        damageManager(magicConsts.getDamageLogSize()),
+        state(magicConsts.getStartState()),
+        active(magicConsts.getStartActive())
     {
     }
 
@@ -54,6 +61,14 @@ namespace my{
 
     const MagicConsts& Enviroment::getMagicConsts(){
         return magicConsts;
+    }
+
+    const DamageManager& Enviroment::getDamageManager(){
+        return damageManager;
+    }
+
+    const SpeedManager& Enviroment::getSpeedManager(){
+        return speedManager;
     }
 
     MoveHelper& Enviroment::getMoveHelper(){
@@ -98,6 +113,10 @@ namespace my{
 
     void* Enviroment::getData(const string name){
         return data.get(name);
+    }
+
+    void Enviroment::removeData(const string name){
+        data.remove(name);
     }
 }
 

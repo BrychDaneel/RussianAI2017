@@ -26,18 +26,19 @@ namespace my{
             void add(const model::Vehicle vehicle);
             void update(const model::VehicleUpdate vehicleUpdate);
 
-            const std::map<long long, model::Vehicle> getMy() const;
-            const std::map<long long, model::Vehicle> getEnemy() const;
-            const std::map<long long, model::Vehicle> getmyTanks() const;
-            const std::map<long long, model::Vehicle> getmyIFVs() const;
-            const std::map<long long, model::Vehicle> getmyHelicopters() const;
-            const std::map<long long, model::Vehicle> getmyFighters() const;
-            const std::map<long long, model::Vehicle> getmyArrvs() const;
-            const std::map<long long, model::Vehicle> getenemyTanks() const;
-            const std::map<long long, model::Vehicle> getenemyIFVs() const;
-            const std::map<long long, model::Vehicle> getenemyHelicopters() const;
-            const std::map<long long, model::Vehicle> getenemyFighters() const;
-            const std::map<long long, model::Vehicle> getenemyArrvs() const;
+            const std::map<long long, model::Vehicle>& getAll() const;
+            const std::map<long long, model::Vehicle>& getMy() const;
+            const std::map<long long, model::Vehicle>& getEnemy() const;
+            const std::map<long long, model::Vehicle>& getmyTanks() const;
+            const std::map<long long, model::Vehicle>& getmyIFVs() const;
+            const std::map<long long, model::Vehicle>& getmyHelicopters() const;
+            const std::map<long long, model::Vehicle>& getmyFighters() const;
+            const std::map<long long, model::Vehicle>& getmyArrvs() const;
+            const std::map<long long, model::Vehicle>& getenemyTanks() const;
+            const std::map<long long, model::Vehicle>& getenemyIFVs() const;
+            const std::map<long long, model::Vehicle>& getenemyHelicopters() const;
+            const std::map<long long, model::Vehicle>& getenemyFighters() const;
+            const std::map<long long, model::Vehicle>& getenemyArrvs() const;
     };
 }
 #endif

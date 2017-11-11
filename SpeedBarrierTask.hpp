@@ -1,6 +1,6 @@
 #pragma once
 #ifndef _MY_SPEED_BARRIER_TASK_HPP_
-#define _MY_ASYNC_MOVE_TASK_HPP_
+#define _MY_SPEED_BARRIER_TASK_HPP_
 
 
 #include "Task.hpp"

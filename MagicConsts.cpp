@@ -1,6 +1,9 @@
 #include "MagicConsts.hpp"
 
 
+#include "pi.hpp"
+
+
 namespace my{
     MagicConsts::MagicConsts(){
     }
@@ -13,6 +16,10 @@ namespace my{
         instance.startState = StateType::Idle;
         instance.minFightDamage = 300;
         instance.defaultAttackSpeed = 0.4 * 0.6;
+        instance.minRotateAngle = PI / 4;
+        instance.minRotateDistance = 200;
+        instance.fightMoveSpeed = 0.1;
+        instance.attackBorrier = 20;
         return instance;
     }
 
@@ -29,6 +36,7 @@ namespace my{
     }
 
     const StateType MagicConsts::getStartState() const{
+
         return startState;
     }
 
@@ -39,4 +47,21 @@ namespace my{
     const double MagicConsts::getDefaultAttackSpeed() const{
         return defaultAttackSpeed;
     }
+
+    const double MagicConsts::getMinRotateAngle() const{
+        return minRotateAngle;
+    }
+
+    const double MagicConsts::getMinRotateDistance() const{
+        return minRotateDistance;
+    }
+
+    const double MagicConsts::getFightMoveSpeed() const{
+        return fightMoveSpeed;
+    }
+
+    const double MagicConsts::getAttackBorrier() const{
+        return attackBorrier;
+    }
+
 }

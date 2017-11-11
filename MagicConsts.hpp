@@ -17,6 +17,10 @@ namespace my{
             StateType startState;
             int minFightDamage;
             double defaultAttackSpeed;
+            double minRotateAngle;
+            double minRotateDistance;
+            double fightMoveSpeed;
+            double attackBorrier;
         public:
             MagicConsts();
             static MagicConsts getDefaulInstance();
@@ -26,6 +30,10 @@ namespace my{
             const StateType getStartState() const;
             const int getMinFightDamage() const;
             const double getDefaultAttackSpeed() const;
+            const double getMinRotateAngle() const;
+            const double getMinRotateDistance() const;
+            const double getFightMoveSpeed() const;
+            const double getAttackBorrier() const;
     };
 }
 

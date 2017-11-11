@@ -42,8 +42,12 @@ namespace my{
             model::Vehicle vehicle = (*vehicleManager->getEnemy().find(near)).second;
             enemyX = vehicle.getX();
             enemyY = vehicle.getY();
+            myX = cx;
+            myY = cy;
             env->putData("EnemyX", &enemyX);
             env->putData("EnemyY", &enemyY);
+            env->putData("MyX", &myX);
+            env->putData("MyY", &myY);
         } else{
             env->removeData("EnemyX");
             env->removeData("EnemyY");

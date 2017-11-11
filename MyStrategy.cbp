@@ -77,6 +77,12 @@
 		<Unit filename="AsyncMoveTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
+		<Unit filename="AsyncRotateTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="AsyncRotateTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="AttackService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -125,6 +131,18 @@
 		<Unit filename="FightDetectorService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="FrontDetectorService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="FrontDetectorService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="FrontMoveService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="FrontMoveService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="GotoAngleService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -141,6 +159,12 @@
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
 		<Unit filename="GroupingService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="HealAngleDetectorService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="HealAngleDetectorService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
 		<Unit filename="IlligalStateException.hpp">
@@ -171,8 +195,20 @@
 		<Unit filename="Repos.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
+		<Unit filename="RotateService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="RotateService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="Runner.cpp" />
 		<Unit filename="Runner.h" />
+		<Unit filename="SelectTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="SelectTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="Service.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
@@ -181,6 +217,12 @@
 		</Unit>
 		<Unit filename="ServiceManager.hpp">
 			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="SleepTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="SleepTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
 		<Unit filename="SpeedBarrierTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
@@ -255,6 +297,7 @@
 		<Unit filename="model/WeatherType.h" />
 		<Unit filename="model/World.cpp" />
 		<Unit filename="model/World.h" />
+		<Unit filename="pi.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

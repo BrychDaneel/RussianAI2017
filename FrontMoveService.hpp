@@ -1,20 +1,18 @@
 #pragma once
-#ifndef _MY_ATTACK_SERVICE_HPP_
-#define _MY_ATTACK_SERVICE_HPP_
+#ifndef _MY_FRONT_MOVE_SERVICE_HPP_
+#define _MY_FRONT_MOVE_SERVICE_HPP_
 
 
 #include "Service.hpp"
-#include "VehicleManager.hpp"
 
 
 namespace my{
-    class AttackService : public Service{
+    class FrontMoveService : public Service{
         private:
             Enviroment* env;
             TaskManager * taskManager;
             const int RATE = 60;
-            double width, height;
-            double attackBarrier;
+            double moveSpeed;
 
         public:
             virtual bool action();

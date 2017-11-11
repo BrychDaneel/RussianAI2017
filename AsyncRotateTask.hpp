@@ -1,29 +1,32 @@
 #pragma once
-#ifndef _MY_ASYNC_MOVE_TASK_HPP_
-#define _MY_ASYNC_MOVE_TASK_HPP_
+#ifndef _MY_ASYNC_ROTATE_TASK_HPP_
+#define _MY_ASYNC_ROTATE_TASK_HPP_
 
 
 #include "Task.hpp"
-#include "Enviroment.hpp"
-#include "ActionManager.hpp"
-#include "GroupManager.hpp"
 #include <string>
 
 
 namespace my{
-    class AsyncMoveTask : public Task{
+    class AsyncRotateTask : public Task{
         private:
             double x;
             double y;
+            double angle;
             double maxSpeed;
+            double maxAngularSpeed;
             bool firtRun = true;
             ActionManager* actionManager;
             const VehicleManager* vehicleManager;
+
+            enum class RotateType{Point, Center} rotateType;
         public:
-            AsyncMoveTask(double x, double y, double maxSpeed = 0.0);
+            AsyncRotateTask(double angle, double maxSpeed, double maxAngularSpeed);
+            AsyncRotateTask(double x, double y, double angle, double maxSpeed, double maxAngularSpeed);
             virtual bool action();
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
     };
 }
 #endif
+
 

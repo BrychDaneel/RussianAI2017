@@ -1,20 +1,22 @@
 #pragma once
-#ifndef _MY_ATTACK_SERVICE_HPP_
-#define _MY_ATTACK_SERVICE_HPP_
+#ifndef _MY_FRONT_DETECTOR_SERVICE_HPP_
+#define _MY_FRONT_DETECTOR_SERVICE_HPP_
 
 
 #include "Service.hpp"
+#include "DamageManager.hpp"
 #include "VehicleManager.hpp"
 
 
 namespace my{
-    class AttackService : public Service{
+    class FrontDetectorService : public Service{
         private:
             Enviroment* env;
-            TaskManager * taskManager;
+            const DamageManager * damageManager;
+            const VehicleManager * vehicleManager;
             const int RATE = 60;
-            double width, height;
-            double attackBarrier;
+            double frontX, frontY;
+            double myX, myY;
 
         public:
             virtual bool action();
@@ -23,3 +25,6 @@ namespace my{
     };
 }
 #endif
+
+
+

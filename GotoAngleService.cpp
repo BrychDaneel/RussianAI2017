@@ -1,6 +1,7 @@
 #include "GotoAngleService.hpp"
 
 
+#include "SelectTask.hpp"
 #include "AsyncMoveTask.hpp"
 #include "ChangeStateTask.hpp"
 
@@ -14,7 +15,8 @@ namespace my{
         int height = env->getGame()->getWorldHeight();
 
         taskManager->addTask(new ChangeStateTask(StateType::Attack));
-        taskManager->addTask(new AsyncMoveTask("All", width, height, 0.4*0.6));
+        taskManager->addTask(new SelectTask("Army"));
+        taskManager->addTask(new AsyncMoveTask(width, height, 0.4*0.6));
         return true;
     }
 

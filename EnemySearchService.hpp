@@ -15,6 +15,8 @@ namespace my{
             const int RATE = 120;
             double enemyX;
             double enemyY;
+            double myX;
+            double myY;
 
         public:
             virtual bool action();

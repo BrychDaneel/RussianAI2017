@@ -1,6 +1,6 @@
 #pragma once
-#ifndef _MY_ATTACK_SERVICE_HPP_
-#define _MY_ATTACK_SERVICE_HPP_
+#ifndef _MY_HEAL_ANGLE_DETECCTOR_SERVICE_HPP_
+#define _MY_HEAL_ANGLE_DETECCTOR_SERVICE_HPP_
 
 
 #include "Service.hpp"
@@ -8,13 +8,13 @@
 
 
 namespace my{
-    class AttackService : public Service{
+    class HealAngleDetectorService : public Service{
         private:
             Enviroment* env;
-            TaskManager * taskManager;
-            const int RATE = 60;
-            double width, height;
-            double attackBarrier;
+            const VehicleManager * vehicleManager;
+            const int RATE = 120;
+            double angleX;
+            double angleY;
 
         public:
             virtual bool action();
@@ -23,3 +23,4 @@ namespace my{
     };
 }
 #endif
+

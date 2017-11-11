@@ -7,6 +7,10 @@
 #include "FightDetectorService.hpp"
 #include "EnemySearchService.hpp"
 #include "AttackService.hpp"
+#include "HealAngleDetectorService.hpp"
+#include "RotateService.hpp"
+#include "FrontDetectorService.hpp"
+#include "FrontMoveService.hpp"
 #ifdef DEBUG
     #include <iostream>
 #endif
@@ -31,7 +35,11 @@ MyStrategy::MyStrategy() :
     serviceManager.addService(new my::BaseBindService());
     serviceManager.addService(new my::GroupingService());
     serviceManager.addService(new my::FightDetectorService());
+    serviceManager.addService(new my::FrontDetectorService());
+    serviceManager.addService(new my::FrontMoveService());
     //serviceManager.addService(new my::GotoAngleService());
     serviceManager.addService(new my::EnemySearchService());
     serviceManager.addService(new my::AttackService());
+    serviceManager.addService(new my::HealAngleDetectorService());
+    serviceManager.addService(new my::RotateService());
 }

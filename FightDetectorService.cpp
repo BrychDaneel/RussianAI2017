@@ -3,6 +3,7 @@
 
 #include "ChangeStateTask.hpp"
 #include "StopTask.hpp"
+#include "SelectTask.hpp"
 
 
 namespace my{
@@ -22,6 +23,7 @@ namespace my{
         bool isFight = damageManager->getSumDamage() >= minFightDamage;
         if (isFight && env->getState() != StateType::Figth){
             taskManager->addTask(new ChangeStateTask(StateType::Figth));
+            taskManager->addTask(new SelectTask("Army"));
             taskManager->addTask(new StopTask());
             return true;
         }

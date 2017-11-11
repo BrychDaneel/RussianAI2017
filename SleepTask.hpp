@@ -1,25 +1,25 @@
 #pragma once
-#ifndef _MY_STOP_TASK_HPP_
-#define _MY_STOP_TASK_HPP_
+#ifndef _MY_SLEEP_TASK_HPP_
+#define _MY_SLEEP_TASK_HPP_
 
 
 #include "Task.hpp"
-#include "Enviroment.hpp"
-#include "ActionManager.hpp"
-#include "GroupManager.hpp"
-#include <string>
 
 
 namespace my{
-    class StopTask : public Task{
+    class SleepTask : public Task{
         private:
+            Enviroment * env;
             bool firstRun = true;
-            ActionManager* actionManager;
+            int startTime;
+            int time;
         public:
-            StopTask();
+            SleepTask(int time);
             virtual bool action();
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
     };
 }
 #endif
+
+
 

@@ -2,7 +2,8 @@
 
 
 #include "InvalidAngleException.hpp"
-#define PI 	3.14159265358979323846264338327
+#include "pi.hpp"
+
 #ifdef DEBUG
     #include <iostream>
     void print(model::ActionType type){
@@ -235,6 +236,7 @@ namespace my{
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
+        move.setAngle(angle);
         actions.push(move);
     }
 
@@ -247,6 +249,7 @@ namespace my{
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
+        move.setAngle(angle);
         move.setMaxSpeed(maxSpeed);
         actions.push(move);
     }
@@ -260,6 +263,7 @@ namespace my{
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);
         move.setY(y);
+        move.setAngle(angle);
         move.setMaxAngularSpeed(maxAngularSpeed);
         actions.push(move);
     }

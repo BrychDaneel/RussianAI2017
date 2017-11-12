@@ -42,5 +42,7 @@ namespace my{
         this->move->setVehicleType(move.getVehicleType());
         this->move->setX(move.getX());
         this->move->setY(move.getY());
+        this->move->setFactor(move.getFactor());
+        this->move->setVehicleId(move.getVehicleId());
     }
 }

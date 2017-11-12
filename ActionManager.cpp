@@ -293,4 +293,32 @@ namespace my{
         move.setFacilityId(facilityId);
         actions.push(move);
     }
+
+    void ActionManager::scale(const double x, const double y, const double factor){
+        model::Move move;
+        move.setAction(model::ActionType::SCALE);
+        move.setX(x);
+        move.setY(y);
+        move.setFactor(factor);
+        actions.push(move);
+    }
+
+    void ActionManager::scale(const double x, const double y,  const double factor, const double maxSpeed){
+        model::Move move;
+        move.setAction(model::ActionType::SCALE);
+        move.setX(x);
+        move.setY(y);
+        move.setFactor(factor);
+        move.setMaxSpeed(maxSpeed);
+        actions.push(move);
+    }
+
+    void ActionManager::tactical_nuclear_strike(const long vehicleId, const double x, const double y){
+        model::Move move;
+        move.setAction(model::ActionType::TACTICAL_NUCLEAR_STRIKE);
+        move.setX(x);
+        move.setY(y);
+        move.setVehicleId(vehicleId);
+        actions.push(move);
+    }
 }

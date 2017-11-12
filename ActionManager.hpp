@@ -46,9 +46,14 @@ namespace my{
             void move(const double dx, const double dy);
             void move(const double dx, const double dy, const double maxSpeed);
 
+            void scale(const double x, const double y, const double factor);
+            void scale(const double x, const double y,  const double factor, const double maxSpeed);
+
             void rotate(const double x, const double y, const double angle);
             void rotate(const double x, const double y, const double angle, const double maxSpeed);
             void rotateAng(const double x, const double y, const double angle, const double maxAngularSpeed);
+
+            void tactical_nuclear_strike(const long vehicleId, const double x, const double y);
 
             void product(long facilityId, model::VehicleType vehicleType);
             void stopProduct(long facilityId);

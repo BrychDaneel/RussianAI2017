@@ -8,6 +8,7 @@
 #include "ActionManager.hpp"
 #include "GroupManager.hpp"
 #include <string>
+#include "model/VehicleType.h"
 
 
 namespace my{
@@ -20,14 +21,17 @@ namespace my{
             double width;
             double height;
             double left, top, right, bottom;
+            model::VehicleType type;
             bool firstRun = true;
 
-            enum class SelectType{All, GID, Name, Rect} selectType;
+            enum class SelectType{All, GID, Name, Rect, TypeAndRect, Type} selectType;
         public:
             SelectTask();
             SelectTask(int groupId);
             SelectTask(const std::string & groupName);
             SelectTask(double left, double top, double right, double bottom);
+            SelectTask(double left, double top, double right, double bottom, model::VehicleType type);
+            SelectTask(model::VehicleType type);
             virtual bool action();
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
     };

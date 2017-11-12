@@ -71,6 +71,12 @@
 		<Unit filename="ActiveType.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
+		<Unit filename="AsyncDeltaTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="AsyncDeltaTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="AsyncMoveTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
@@ -81,6 +87,12 @@
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
 		<Unit filename="AsyncRotateTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="AsyncScaleTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="AsyncScaleTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
 		<Unit filename="AttackService.cpp">
@@ -248,6 +260,12 @@
 		<Unit filename="SleepTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
+		<Unit filename="SmartStartGroupService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="SmartStartGroupService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="SpeedBarrierTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
@@ -279,6 +297,12 @@
 		</Unit>
 		<Unit filename="TaskManager.hpp">
 			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="TempService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="TempService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
 		<Unit filename="VehicleManager.cpp">
 			<Option virtualFolder="my/Sources/" />

@@ -24,6 +24,20 @@ namespace my{
         this->bottom = bottom;
     }
 
+    SelectTask::SelectTask(double left, double top, double right, double bottom, model::VehicleType type){
+        selectType = SelectType::TypeAndRect;
+        this->left = left;
+        this->top = top;
+        this->right = right;
+        this->bottom = bottom;
+        this->type = type;
+    }
+
+    SelectTask::SelectTask(model::VehicleType type){
+        selectType = SelectType::Type;
+        this->type = type;
+    }
+
     void SelectTask::setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager){
         this->actionManager = &actionManager;
         this->groupManager = &groupManager;
@@ -49,6 +63,12 @@ namespace my{
                 break;
             case SelectType::Rect:
                 actionManager->select(left, top, right, bottom);
+                break;
+            case SelectType::Type:
+                actionManager->select(0, 0, width, height, type);
+                break;
+            case SelectType::TypeAndRect:
+                actionManager->select(left, top, right, bottom, type);
                 break;
         }
 

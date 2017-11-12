@@ -12,6 +12,7 @@
 #include "SleepTask.hpp"
 #include "AsyncRotateTask.hpp"
 #include "StopTask.hpp"
+#include "AsyncScaleTask.hpp"
 
 
 namespace my{
@@ -24,7 +25,7 @@ namespace my{
         taskManager->addTask(new SleepTask(100));
         taskManager->addTask(new StopTask());
 
-        taskManager->addTask(new GridGroupTask(2,2));
+        taskManager->addTask(new AsyncScaleTask(0.1));
         taskManager->addTask(new SleepTask(100));
 
         taskManager->addTask(new SelectTask("Army"));
@@ -32,7 +33,7 @@ namespace my{
         taskManager->addTask(new SleepTask(100));
         taskManager->addTask(new StopTask());
 
-        taskManager->addTask(new GridGroupTask(2,2));
+        taskManager->addTask(new AsyncScaleTask(0.1));
         taskManager->addTask(new SleepTask(100));
 
         taskManager->addTask(new SelectTask("Army"));
@@ -40,7 +41,7 @@ namespace my{
         taskManager->addTask(new SleepTask(100));
         taskManager->addTask(new StopTask());
 
-        taskManager->addTask(new GridGroupTask(2,2));
+        taskManager->addTask(new AsyncScaleTask(0.1));
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new ChangeStateTask(StateType::Idle));

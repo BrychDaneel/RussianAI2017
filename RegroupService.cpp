@@ -3,6 +3,7 @@
 
 #include "Repos.hpp"
 #include "ChangeStateTask.hpp"
+#include "AsyncScaleTask.hpp"
 #include "GridGroupTask.hpp"
 #include "SpeedBarrierTask.hpp"
 #include "SelectTask.hpp"
@@ -95,8 +96,7 @@ namespace my{
 
         taskManager->addTask(new ChangeStateTask(StateType::Group));
         taskManager->addTask(new SelectTask("Army"));
-        taskManager->addTask(new StopTask());
-        taskManager->addTask(new GridGroupTask(2, 2));
+        taskManager->addTask(new AsyncScaleTask(0.1));
         taskManager->addTask(new SpeedBarrierTask(0.1));
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
         return true;

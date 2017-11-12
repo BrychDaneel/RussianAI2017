@@ -14,6 +14,8 @@ namespace my{
         public:
             static void getCenter(std::vector<model::Vehicle> arr, double & x, double & y);
             static void getCenter(std::map<long long, model::Vehicle> map, double & x, double & y);
+            static void getBox(std::vector<model::Vehicle> arr, double & minX, double & minY, double & maxX, double & maxY);
+            static void getBox(std::map<long long, model::Vehicle> map, double & minX, double & minY, double & maxX, double & maxY);
     };
 }
 

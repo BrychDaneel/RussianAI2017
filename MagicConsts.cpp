@@ -17,9 +17,12 @@ namespace my{
         instance.minFightDamage = 300;
         instance.defaultAttackSpeed = 0.4 * 0.6;
         instance.minRotateAngle = PI / 4;
-        instance.minRotateDistance = 200;
+        instance.minRotateDistance = 100;
+        instance.minRotateTime = 240;
         instance.fightMoveSpeed = 0.1;
         instance.attackBorrier = 20;
+        instance.maxSquarCof = 700;
+        instance.maxFightSquarCof = 900;
         return instance;
     }
 
@@ -62,6 +65,18 @@ namespace my{
 
     const double MagicConsts::getAttackBorrier() const{
         return attackBorrier;
+    }
+
+    const double MagicConsts::getMaxSquarCof() const{
+        return maxSquarCof;
+    }
+
+    const double MagicConsts::getMaxFightSquarCof() const{
+        return maxFightSquarCof;
+    }
+
+    const int MagicConsts::getMinRotateTime() const{
+        return minRotateTime;
     }
 
 }

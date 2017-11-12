@@ -1,22 +1,17 @@
 #pragma once
-#ifndef _MY_ROTATE_SERVICE_HPP_
-#define _MY_ROTATE_SERVICE_HPP_
+#ifndef _MY_CIRCUL_START_GROUP_SERVICE_HPP_
+#define _MY_CIRCUL_START_GROUP_SERVICE_HPP_
 
 
 #include "Service.hpp"
-#include "VehicleManager.hpp"
 
 
 namespace my{
-    class RotateService : public Service{
+    class CirculStartGroupService : public Service{
         private:
             Enviroment* env;
             TaskManager * taskManager;
-            const SpeedManager * speedManager;
-            const int RATE = 240;
-            double minRotateAngle;
-            double minRotateDistance;
-            int minRotateTime;
+            const int RATE = 0;
 
         public:
             virtual bool action();
@@ -26,5 +21,4 @@ namespace my{
 }
 
 #endif
-
 

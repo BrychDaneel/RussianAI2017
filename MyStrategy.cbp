@@ -95,11 +95,23 @@
 		<Unit filename="BaseBindService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="CategoryBindService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="CategoryBindService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="ChangeStateTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
 		<Unit filename="ChangeStateTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="CirculStartGroupService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="CirculStartGroupService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
 		<Unit filename="DamageManager.cpp">
 			<Option virtualFolder="my/Sources/" />
@@ -149,6 +161,12 @@
 		<Unit filename="GotoAngleService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="GridGroupTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="GridGroupTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="GroupManager.cpp">
 			<Option virtualFolder="my/Sources/" />
 		</Unit>
@@ -187,6 +205,12 @@
 		</Unit>
 		<Unit filename="MyStrategy.cpp" />
 		<Unit filename="MyStrategy.h" />
+		<Unit filename="RegroupService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="RegroupService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="RemoteProcessClient.cpp" />
 		<Unit filename="RemoteProcessClient.h" />
 		<Unit filename="Repos.cpp">
@@ -297,7 +321,9 @@
 		<Unit filename="model/WeatherType.h" />
 		<Unit filename="model/World.cpp" />
 		<Unit filename="model/World.h" />
-		<Unit filename="pi.hpp" />
+		<Unit filename="pi.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

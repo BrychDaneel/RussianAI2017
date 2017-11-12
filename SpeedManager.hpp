@@ -17,12 +17,14 @@ namespace my{
         private:
             std::map<long long, double> speed;
             double maxMySpeed;
+            double maxEnemySpeed;
             size_t len;
         public:
             SpeedManager();
             void update(const std::map<long long,model::Vehicle>& vehicles, int myId, const std::vector<model::VehicleUpdate>& updates);
             double getMaxMySpeed() const;
             double getSpeed(long long id) const;
+            double getMaxEnemySpeed() const;
     };
 }
 

@@ -8,6 +8,7 @@
 #include "AsyncMoveTask.hpp"
 #include "SpeedBarrierTask.hpp"
 #include "ChangeStateTask.hpp"
+#include "GridGroupTask.hpp"
 
 
 namespace my{
@@ -18,20 +19,7 @@ namespace my{
 
         taskManager->addTask(new ChangeStateTask(StateType::Group));
 
-        taskManager->addTask(new SelectTask("Tanks"));
-        taskManager->addTask(new AsyncMoveTask(cx, cy));
-
-        taskManager->addTask(new SelectTask("Arrvs"));
-        taskManager->addTask(new AsyncMoveTask(cx, cy));
-
-        taskManager->addTask(new SelectTask("Fighters"));
-        taskManager->addTask(new AsyncMoveTask(cx, cy));
-
-        taskManager->addTask(new SelectTask("Helicopters"));
-        taskManager->addTask(new AsyncMoveTask(cx, cy));
-
-        taskManager->addTask(new SelectTask("IFVs"));
-        taskManager->addTask(new AsyncMoveTask(cx, cy));
+        taskManager->addTask(new GridGroupTask(2, 2));
 
         taskManager->addTask(new SpeedBarrierTask(0.1));
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
@@ -46,9 +34,9 @@ namespace my{
         this->env = &env;
         this->taskManager = &taskManager;
         this->actionManager = &actionManager;
-        this->groupManager = &groupManager;
     }
 
     GroupingService::~GroupingService(){
     }
 }
+

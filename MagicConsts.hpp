@@ -21,6 +21,9 @@ namespace my{
             double minRotateDistance;
             double fightMoveSpeed;
             double attackBorrier;
+            double maxSquarCof;
+            double maxFightSquarCof;
+            int minRotateTime;
         public:
             MagicConsts();
             static MagicConsts getDefaulInstance();
@@ -34,6 +37,9 @@ namespace my{
             const double getMinRotateDistance() const;
             const double getFightMoveSpeed() const;
             const double getAttackBorrier() const;
+            const double getMaxSquarCof() const;
+            const double getMaxFightSquarCof() const;
+            const int getMinRotateTime() const;
     };
 }
 

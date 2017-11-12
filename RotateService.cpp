@@ -27,6 +27,8 @@ namespace my{
         this->taskManager = &taskManager;
         minRotateAngle = env.getMagicConsts().getMinRotateAngle();
         minRotateDistance = env.getMagicConsts().getMinRotateDistance();
+        minRotateTime = env.getMagicConsts().getMinRotateTime();
+        speedManager = &env.getSpeedManager();
     }
 
     int RotateService::getRate(){
@@ -51,8 +53,13 @@ namespace my{
         double attackAngle = atan2(attackX, attackY);
         double angle = atan2(angleX, angleY);
         double rot = angle - attackAngle;
+        if (rot > PI)
+            rot = rot - 2*PI;
+        if (rot < -PI)
+            rot = 2*PI + rot;
 
-        if (ABS(angle) > minRotateAngle && distance > minRotateDistance){
+        double enemySpeed = speedManager->getMaxEnemySpeed();
+        if (ABS(rot) > minRotateAngle && distance > minRotateDistance && (enemySpeed == 0 || distance / enemySpeed > minRotateTime)){
             taskManager->addTask(new ChangeStateTask(StateType::Group));
             taskManager->addTask(new AsyncRotateTask(rot, 0.0, 0.0));
             //taskManager->addTask(new SleepTask(1000));

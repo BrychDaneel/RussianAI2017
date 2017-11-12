@@ -1,7 +1,8 @@
 #include "ActionManager.hpp"
 
-
-#include "InvalidAngleException.hpp"
+#ifdef DEBUG
+    #include "InvalidAngleException.hpp"
+#endif // DEBUG
 #include "pi.hpp"
 
 #ifdef DEBUG
@@ -228,10 +229,14 @@ namespace my{
     }
 
     void ActionManager::rotate(const double x, const double y, const double angle){
+
+        #ifdef DEBUG
         if (angle > PI || angle < -PI){
             InvalidAngleException exc;
             throw exc;
         }
+        #endif // DEBUG
+
         model::Move move;
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);
@@ -241,10 +246,13 @@ namespace my{
     }
 
     void ActionManager::rotate(const double x, const double y, const double angle, const double maxSpeed){
+        #ifdef DEBUG
         if (angle > PI || angle < -PI){
             InvalidAngleException exc;
             throw exc;
         }
+        #endif // DEBUG
+
         model::Move move;
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);
@@ -255,10 +263,13 @@ namespace my{
     }
 
     void ActionManager::rotateAng(const double x, const double y, const double angle, const double maxAngularSpeed){
+        #ifdef DEBUG
         if (angle > PI || angle < -PI){
             InvalidAngleException exc;
             throw exc;
         }
+        #endif // DEBUG
+
         model::Move move;
         move.setAction(model::ActionType::ROTATE);
         move.setX(x);

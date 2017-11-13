@@ -18,11 +18,17 @@ namespace my{
     ServiceManager::~ServiceManager(){
         for (Service * service : services)
             delete service;
+        for (Interruption * interruption : interruptions)
+            delete interruption;
     }
 
     void ServiceManager::addService(Service* service){
         services.push_back(service);
         lastCall[service] = -1;
+    }
+
+    void ServiceManager::addInterruption(Interruption* interruption){
+        interruptions.push_back(interruption);
     }
 
     void ServiceManager::runService(){
@@ -68,6 +74,8 @@ namespace my{
         actionLimitor.setup();
         for (auto service : services)
             service->setup(enviroment, taskManager, actionManager, groupManager);
+        for (Interruption * interruption : interruptions)
+            interruption->setup(enviroment, taskManager, actionManager, groupManager);
     }
 
     void ServiceManager::tick(){
@@ -81,6 +89,9 @@ namespace my{
             actionLimitor.tick(false);
             return;
         }
+
+        for (Interruption * interruption : interruptions)
+            interruption->action();
 
         int avgDelta = actionLimitor.getInterval() / actionLimitor.getLimit();
         int tickNumber = enviroment.getWorld()->getTickIndex();

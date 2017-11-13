@@ -83,24 +83,24 @@
 
 1510418958 /home/daneel/prog/ai/CodeWars/solution/model/VehicleType.h
 
-1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/Game.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/model/Game.cpp
 	"Game.h"
 
-1510418958 /home/daneel/prog/ai/CodeWars/solution/model/Game.h
+1510518834 /home/daneel/prog/ai/CodeWars/solution/model/Game.h
 
-1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/Move.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/model/Move.cpp
 	"Move.h"
 
-1510418958 /home/daneel/prog/ai/CodeWars/solution/model/Move.h
+1510518834 /home/daneel/prog/ai/CodeWars/solution/model/Move.h
 	"ActionType.h"
 	"VehicleType.h"
 
-1510418958 /home/daneel/prog/ai/CodeWars/solution/model/ActionType.h
+1510518834 /home/daneel/prog/ai/CodeWars/solution/model/ActionType.h
 
-1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/Player.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/model/Player.cpp
 	"Player.h"
 
-1510418958 /home/daneel/prog/ai/CodeWars/solution/model/Player.h
+1510518834 /home/daneel/prog/ai/CodeWars/solution/model/Player.h
 
 1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/PlayerContext.cpp
 	"PlayerContext.h"
@@ -145,27 +145,47 @@
 1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/World.cpp
 	"World.h"
 
-1510159971 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
+1510537580 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
 	"MyStrategy.h"
-	<cmath>
-	<cstdlib>
+	"MagicConsts.hpp"
+	"GroupingService.hpp"
+	"GotoAngleService.hpp"
+	"BaseBindService.hpp"
+	"FightDetectorService.hpp"
+	"EnemySearchService.hpp"
+	"AttackService.hpp"
+	"HealAngleDetectorService.hpp"
+	"RotateService.hpp"
+	"FrontDetectorService.hpp"
+	"FrontMoveService.hpp"
+	"CategoryBindService.hpp"
+	"RegroupService.hpp"
+	"CirculStartGroupService.hpp"
+	"SmartStartGroupService.hpp"
+	"TempService.hpp"
+	"AttackInterruption.hpp"
+	"PerfectBreakService.hpp"
+	<iostream>
 
-1509810742 /home/daneel/prog/ai/CodeWars/solution/MyStrategy.h
+1510518885 /home/daneel/prog/ai/CodeWars/solution/MyStrategy.h
 	"Strategy.h"
+	"ServiceManager.hpp"
+	"Enviroment.hpp"
 
 1509810671 /home/daneel/prog/ai/CodeWars/solution/Strategy.h
 	"model/Game.h"
 	"model/Move.h"
 	"model/World.h"
 
-1510247532 /home/daneel/prog/ai/CodeWars/solution/ServiceManager.hpp
+1510533207 /home/daneel/prog/ai/CodeWars/solution/ServiceManager.hpp
 	"TaskManager.hpp"
 	"Service.hpp"
+	"Interruption.hpp"
 	"Enviroment.hpp"
 	"ActionLimitor.hpp"
 	<vector>
 
-1510240616 /home/daneel/prog/ai/CodeWars/solution/TaskManager.hpp
+1510532497 /home/daneel/prog/ai/CodeWars/solution/TaskManager.hpp
 	"Task.hpp"
 	"ActionManager.hpp"
 	<queue>
@@ -199,7 +219,7 @@
 	"SpeedManager.hpp"
 	"DamageManager.hpp"
 
-1510419718 source:/home/daneel/prog/ai/CodeWars/solution/RemoteProcessClient.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/RemoteProcessClient.cpp
 	"RemoteProcessClient.h"
 	<algorithm>
 	<cstdlib>
@@ -227,7 +247,7 @@
 
 1510091121 source:/home/daneel/prog/ai/CodeWars/solution/Service.cpp
 
-1510258215 source:/home/daneel/prog/ai/CodeWars/solution/ServiceManager.cpp
+1510533649 source:/home/daneel/prog/ai/CodeWars/solution/ServiceManager.cpp
 	"ServiceManager.hpp"
 	"ActiveType.hpp"
 
@@ -236,24 +256,24 @@
 
 1510089985 source:/home/daneel/prog/ai/CodeWars/solution/Task.cpp
 
-1510351248 source:/home/daneel/prog/ai/CodeWars/solution/TaskManager.cpp
+1510532551 source:/home/daneel/prog/ai/CodeWars/solution/TaskManager.cpp
 	"TaskManager.hpp"
 
 1510241510 /home/daneel/prog/ai/CodeWars/solution/MoveHelper.hpp
 	"model/Move.h"
 
-1510516241 source:/home/daneel/prog/ai/CodeWars/solution/MoveHelper.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/MoveHelper.cpp
 	"MoveHelper.hpp"
 	"IlligalStateException.hpp"
 
 1510175602 /home/daneel/prog/ai/CodeWars/solution/IlligalStateException.hpp
 	<exception>
 
-1510448914 source:/home/daneel/prog/ai/CodeWars/solution/MagicConsts.cpp
+1510535557 source:/home/daneel/prog/ai/CodeWars/solution/MagicConsts.cpp
 	"MagicConsts.hpp"
 	"pi.hpp"
 
-1510444889 /home/daneel/prog/ai/CodeWars/solution/MagicConsts.hpp
+1510534697 /home/daneel/prog/ai/CodeWars/solution/MagicConsts.hpp
 	<cstring>
 	"StateType.hpp"
 	"ActiveType.hpp"
@@ -267,13 +287,13 @@
 	"model/VehicleUpdate.h"
 	<map>
 
-1510516478 source:/home/daneel/prog/ai/CodeWars/solution/ActionManager.cpp
+1510532469 source:/home/daneel/prog/ai/CodeWars/solution/ActionManager.cpp
 	"ActionManager.hpp"
 	"InvalidAngleException.hpp"
 	"pi.hpp"
 	<iostream>
 
-1510516160 /home/daneel/prog/ai/CodeWars/solution/ActionManager.hpp
+1510532370 /home/daneel/prog/ai/CodeWars/solution/ActionManager.hpp
 	"model/Move.h"
 	"MoveHelper.hpp"
 	<queue>
@@ -454,7 +474,7 @@
 	"Service.hpp"
 	"VehicleManager.hpp"
 
-1510445498 source:/home/daneel/prog/ai/CodeWars/solution/RotateService.cpp
+1510537119 source:/home/daneel/prog/ai/CodeWars/solution/RotateService.cpp
 	"RotateService.hpp"
 	"StateType.hpp"
 	"Repos.hpp"
@@ -464,17 +484,18 @@
 	"AsyncRotateTask.hpp"
 	"ChangeStateTask.hpp"
 	"SpeedBarrierTask.hpp"
+	"SelectTask.hpp"
 	<cmath>
 	"SleepTask.hpp"
 	"pi.hpp"
 
-1510445124 /home/daneel/prog/ai/CodeWars/solution/RotateService.hpp
+1510537467 /home/daneel/prog/ai/CodeWars/solution/RotateService.hpp
 	"Service.hpp"
 	"VehicleManager.hpp"
 
 1510404617 source:/home/daneel/prog/ai/CodeWars/solution/RotateTask.cpp
 
-1510509487 source:/home/daneel/prog/ai/CodeWars/solution/SelectTask.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/SelectTask.cpp
 	"SelectTask.hpp"
 
 1510412582 source:/home/daneel/prog/ai/CodeWars/solution/AsyncRotateTask.cpp
@@ -482,7 +503,7 @@
 	<vector>
 	"Repos.hpp"
 
-1510507841 /home/daneel/prog/ai/CodeWars/solution/SelectTask.hpp
+1510518834 /home/daneel/prog/ai/CodeWars/solution/SelectTask.hpp
 	"Task.hpp"
 	"Enviroment.hpp"
 	"ActionManager.hpp"
@@ -524,10 +545,11 @@
 1510424837 /home/daneel/prog/ai/CodeWars/solution/FrontMoveService.hpp
 	"Service.hpp"
 
-1510448453 source:/home/daneel/prog/ai/CodeWars/solution/RegroupService.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/RegroupService.cpp
 	"RegroupService.hpp"
 	"Repos.hpp"
 	"ChangeStateTask.hpp"
+	"AsyncScaleTask.hpp"
 	"GridGroupTask.hpp"
 	"SpeedBarrierTask.hpp"
 	"SelectTask.hpp"
@@ -550,7 +572,7 @@
 1510447235 /home/daneel/prog/ai/CodeWars/solution/RegroupService.hpp
 	"Service.hpp"
 
-1510518200 source:/home/daneel/prog/ai/CodeWars/solution/CirculStartGroupService.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/CirculStartGroupService.cpp
 	"CirculStartGroupService.hpp"
 	"model/Vehicle.h"
 	<map>
@@ -568,22 +590,22 @@
 1510442779 /home/daneel/prog/ai/CodeWars/solution/CirculStartGroupService.hpp
 	"Service.hpp"
 
-1510502472 source:/home/daneel/prog/ai/CodeWars/solution/TempService.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/TempService.cpp
 	"TempService.hpp"
 	"Repos.hpp"
 	<iostream>
 
-1510500164 /home/daneel/prog/ai/CodeWars/solution/TempService.hpp
+1510518834 /home/daneel/prog/ai/CodeWars/solution/TempService.hpp
 	"Service.hpp"
 
-1510504136 source:/home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.cpp
 	"AsyncDeltaTask.hpp"
 	"Repos.hpp"
 
-1510504389 /home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.hpp
+1510518834 /home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.hpp
 	"Service.hpp"
 
-1510516615 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
+1510535944 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
 	"SmartStartGroupService.hpp"
 	"model/Vehicle.h"
 	<map>
@@ -597,17 +619,54 @@
 	"SleepTask.hpp"
 	"AsyncRotateTask.hpp"
 	"StopTask.hpp"
+	"AsyncScaleTask.hpp"
+	"ChangeActiveTask.hpp"
+	"pi.hpp"
 
-1510507505 /home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.hpp
+1510528705 /home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.hpp
 	"Service.hpp"
 	"model/VehicleType.h"
 
-1510517853 source:/home/daneel/prog/ai/CodeWars/solution/AsyncScaleTask.cpp
+1510518834 source:/home/daneel/prog/ai/CodeWars/solution/AsyncScaleTask.cpp
 	"AsyncScaleTask.hpp"
 	<vector>
 	"Repos.hpp"
 
-1510517542 /home/daneel/prog/ai/CodeWars/solution/AsyncScaleTask.hpp
+1510518834 /home/daneel/prog/ai/CodeWars/solution/AsyncScaleTask.hpp
 	"Task.hpp"
 	<string>
+
+1510532955 source:/home/daneel/prog/ai/CodeWars/solution/ChangeActiveTask.cpp
+	"ChangeActiveTask.hpp"
+
+1510534642 source:/home/daneel/prog/ai/CodeWars/solution/PerfectBreakService.cpp
+	"PerfectBreakService.hpp"
+
+1510533714 source:/home/daneel/prog/ai/CodeWars/solution/AttackInterruption.cpp
+	"AttackInterruption.hpp"
+	"Repos.hpp"
+	<cmath>
+	"ChangeStateTask.hpp"
+	"ChangeActiveTask.hpp"
+	"SelectTask.hpp"
+	"AsyncScaleTask.hpp"
+
+1510533568 /home/daneel/prog/ai/CodeWars/solution/AttackInterruption.hpp
+	"Interruption.hpp"
+
+1510531428 /home/daneel/prog/ai/CodeWars/solution/Interruption.hpp
+	"TaskManager.hpp"
+	"Enviroment.hpp"
+	"ActionManager.hpp"
+	"GroupManager.hpp"
+
+1510532903 /home/daneel/prog/ai/CodeWars/solution/ChangeActiveTask.hpp
+	"Task.hpp"
+	"Enviroment.hpp"
+	"ActionManager.hpp"
+	"GroupManager.hpp"
+	"ActiveType.hpp"
+
+1510534633 /home/daneel/prog/ai/CodeWars/solution/PerfectBreakService.hpp
+	"Service.hpp"
 

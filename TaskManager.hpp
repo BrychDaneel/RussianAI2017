@@ -20,6 +20,7 @@ namespace my{
             TaskManager(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
             virtual ~TaskManager();
             void addTask(Task* task);
+            void clear();
             bool action();
     };
 }

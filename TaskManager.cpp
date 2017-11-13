@@ -37,4 +37,9 @@ namespace my{
         return used;
     }
 
+    void TaskManager::clear(){
+        while (!tasks.empty())
+            tasks.pop();
+    }
+
 }

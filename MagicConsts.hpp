@@ -23,6 +23,8 @@ namespace my{
             double attackBorrier;
             double maxSquarCof;
             double maxFightSquarCof;
+            double groupIntDistance;
+            double perfectBreakPercent;
             int minRotateTime;
         public:
             MagicConsts();
@@ -40,6 +42,8 @@ namespace my{
             const double getMaxSquarCof() const;
             const double getMaxFightSquarCof() const;
             const int getMinRotateTime() const;
+            const int getGroupIntDistance() const;
+            const double getPerfectBreakPercent() const;
     };
 }
 

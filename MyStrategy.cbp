@@ -5,7 +5,7 @@
 		<Option title="MyStrategy" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="my/;my/Headers/;my/Sources/;my/Headers/Services/;my/Headers/Tasks/;my/Sources/Services/;my/Sources/Tasks/;" />
+		<Option virtualFolders="my/;my/Headers/;my/Sources/;my/Headers/Services/;my/Headers/Tasks/;my/Sources/Services/;my/Sources/Tasks/;my/Headers/Interruptions/;my/Sources/Interruptions/;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/MyStrategy" prefix_auto="1" extension_auto="1" />
@@ -95,6 +95,12 @@
 		<Unit filename="AsyncScaleTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
+		<Unit filename="AttackInterruption.cpp">
+			<Option virtualFolder="my/Sources/Interruptions/" />
+		</Unit>
+		<Unit filename="AttackInterruption.hpp">
+			<Option virtualFolder="my/Headers/Interruptions/" />
+		</Unit>
 		<Unit filename="AttackService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -112,6 +118,12 @@
 		</Unit>
 		<Unit filename="CategoryBindService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="ChangeActiveTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="ChangeActiveTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
 		<Unit filename="ChangeStateTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
@@ -200,6 +212,12 @@
 		<Unit filename="IlligalStateException.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
+		<Unit filename="Interruption.cpp">
+			<Option virtualFolder="my/Sources/" />
+		</Unit>
+		<Unit filename="Interruption.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Unit filename="InvalidAngleException.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
@@ -217,6 +235,12 @@
 		</Unit>
 		<Unit filename="MyStrategy.cpp" />
 		<Unit filename="MyStrategy.h" />
+		<Unit filename="PerfectBreakService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="PerfectBreakService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="RegroupService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>

@@ -14,6 +14,10 @@
 #include "SleepTask.hpp"
 #include "AsyncRotateTask.hpp"
 #include "StopTask.hpp"
+#include "AsyncScaleTask.hpp"
+#include "ChangeActiveTask.hpp"
+
+#include "pi.hpp"
 
 namespace my{
 
@@ -43,6 +47,7 @@ namespace my{
     }
 
     bool SmartStartGroupService::action(){
+
         taskManager->addTask(new ChangeStateTask(StateType::Group));
 
         int ground[3][3];
@@ -53,31 +58,42 @@ namespace my{
 
         double cx, cy;
         int arrvsY, IFVsY, tanksY, fighterY, helicopterY;
+        int arrvsX, IFVsX, tanksX, fighterX, helicopterX;
 
         Repos::getCenter(vehicleManager->getmyArrvs(), cx, cy);
         arrvsY = ((int)cy) / 74;
-        ground[((int)cx) / 74][((int)cy) / 74] = 1;
+        arrvsX = ((int)cx) / 74;
+        ground[arrvsX][arrvsY] = 1;
 
         Repos::getCenter(vehicleManager->getmyIFVs(), cx, cy);
         IFVsY = ((int)cy) / 74;
-        ground[((int)cx) / 74][((int)cy) / 74] = 2;
+        IFVsX = ((int)cx) / 74;
+        ground[IFVsX][IFVsY] = 2;
 
         Repos::getCenter(vehicleManager->getmyTanks(), cx, cy);
         tanksY = ((int)cy) / 74;
-        ground[((int)cx) / 74][((int)cy) / 74] = 3;
+        tanksX = ((int)cx) / 74;
+        ground[tanksX][tanksY] = 3;
 
         Repos::getCenter(vehicleManager->getmyFighters(), cx, cy);
         fighterY = ((int)cy) / 74;
-        air[((int)cx) / 74][((int)cy) / 74] = 4;
+        fighterX = ((int)cx) / 74;
+        air[fighterX][fighterY] = 4;
 
         Repos::getCenter(vehicleManager->getmyHelicopters(), cx, cy);
         helicopterY = ((int)cy) / 74;
-        air[((int)cx) / 74][((int)cy) / 74] = 5;
+        helicopterX = ((int)cx) / 74;
+        air[helicopterX][helicopterY] = 5;
+
+        int xs[6];
+
+        taskManager->addTask(new ChangeActiveTask(ActiveType::Hight));
 
         int count = 0;
         for (int ii=0; ii<3; ii++)
             for (int i=0; i<3; i++)
                 if (ground[i][ii]){
+                    xs[ground[i][ii]] = count;
                     int d = count - i;
                     if (d){
                         taskManager->addTask(new SelectTask(convert(ground[i][ii])));
@@ -90,6 +106,7 @@ namespace my{
         for (int ii=0; ii<3; ii++)
             for (int i=0; i<3; i++)
                 if (air[i][ii]){
+                    xs[air[i][ii]] = count;
                     int d = count - i;
                     if (d){
                         taskManager->addTask(new SelectTask(convert(air[i][ii])));
@@ -101,15 +118,72 @@ namespace my{
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new SelectTask(model::VehicleType::ARRV));
-
-        taskManager->addTask(new AsyncDeltaTask(0, (0 - arrvsY - 2.5)*74));
+        taskManager->addTask(new AsyncDeltaTask(0, (0 - arrvsY)*74 - 2.9));
 
         taskManager->addTask(new SelectTask(model::VehicleType::IFV));
         if (IFVsY != 0)
             taskManager->addTask(new AsyncDeltaTask(0, (0 - IFVsY)*74));
 
+        taskManager->addTask(new SelectTask(model::VehicleType::TANK));
+        if (tanksY != 1)
+            taskManager->addTask(new AsyncDeltaTask(0, (1 - tanksY)*74));
+
+        taskManager->addTask(new SelectTask(model::VehicleType::HELICOPTER));
+        if (helicopterY != 0)
+            taskManager->addTask(new AsyncDeltaTask(0, (0 - helicopterY)*74));
+
+        taskManager->addTask(new SelectTask(model::VehicleType::FIGHTER));
+        if (fighterY != 1)
+            taskManager->addTask(new AsyncDeltaTask(0, (1 - fighterY)*74));
+
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+
+        taskManager->addTask(new SelectTask("Army"));
+        taskManager->addTask(new AsyncScaleTask(0, 0, 2));
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+        taskManager->addTask(new ChangeActiveTask(ActiveType::Normal));
+
+        for (int it = 1; it<=5; it++){
+            int dl = 30;
+            if (it==4 || it==3)
+                dl = 148 + 30;
+
+            for (int i=0; i<3; i++){
+                double left = 0;
+                double top = dl + 116/3*i;
+                double right = 3*148;
+                double bottom = dl + 116/3*(i+1);
+                taskManager->addTask(new SelectTask(left, top, right, bottom, convert(it)));
+                taskManager->addTask(new AsyncDeltaTask( (i - xs[it])*148 ,0));
+            }
+        }
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+        for (int i=0; i<2; i++){
+            double left = i*148;
+            double top = 0;
+            double right = (i+1)*148;
+            double bottom = 148*3;
+            taskManager->addTask(new SelectTask(left, top, right, bottom));
+            taskManager->addTask(new AsyncDeltaTask(0, (2-i)*116/3));
+        }
+
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+        taskManager->addTask(new SelectTask(0, 0, 3 * 148, 148));
+        taskManager->addTask(new AsyncDeltaTask(0, 148, 0.6*0.4));
+
+        taskManager->addTask(new SelectTask(0, 148, 3 * 148, 2*148));
+        taskManager->addTask(new AsyncDeltaTask(0, -148, 0.6*0.4));
+
+        taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
+
+        pAngle = PI / 2;
+        env->putData("PAngle", &pAngle);
         return true;
     }
 

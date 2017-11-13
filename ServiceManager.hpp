@@ -5,6 +5,7 @@
 
 #include "TaskManager.hpp"
 #include "Service.hpp"
+#include "Interruption.hpp"
 #include "Enviroment.hpp"
 #include "ActionLimitor.hpp"
 #include <vector>
@@ -19,6 +20,7 @@ namespace my{
             TaskManager taskManager;
             ActionLimitor actionLimitor;
 
+            std::vector<Interruption*> interruptions;
             std::vector<Service*> services;
             std::map<Service*, int> lastCall;
             bool first = true;
@@ -31,6 +33,7 @@ namespace my{
             ServiceManager(Enviroment& enviroment);
             virtual ~ServiceManager();
             void addService(Service* service);
+            void addInterruption(Interruption* interruption);
             void tick();
     };
 }

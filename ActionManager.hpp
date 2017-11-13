@@ -23,6 +23,7 @@ namespace my{
             void NopeOrNope();
 
             bool empty();
+            void clear();
             bool lastIsNope();
 
             void nope();

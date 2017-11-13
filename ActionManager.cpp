@@ -73,6 +73,11 @@ namespace my{
         return actions.empty();
     }
 
+    void ActionManager::clear(){
+        while (!empty())
+            actions.pop();
+    }
+
     void ActionManager::actionOrNope(){
         if (empty())
             nope();

@@ -13,9 +13,10 @@ namespace my{
             Enviroment* env;
             TaskManager * taskManager;
             const SpeedManager * speedManager;
-            const int RATE = 240;
+            const int RATE = 360;
             double minRotateAngle;
             double minRotateDistance;
+            double pAngle;
             int minRotateTime;
 
         public:

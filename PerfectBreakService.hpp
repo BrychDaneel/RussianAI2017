@@ -1,22 +1,19 @@
 #pragma once
-#ifndef _MY_SMART_START_GROUP_SERVICE_HPP_
-#define _MY_SMART_START_GROUP_SERVICE_HPP_
+#ifndef _MY_PERFECT_BREAK_SERVICE_HPP_
+#define _MY_PERFECT_BREAK_SERVICE_HPP_
 
 
 #include "Service.hpp"
-#include "model/VehicleType.h"
 
 
 namespace my{
-    class SmartStartGroupService : public Service{
+    class PerfectBreakService : public Service{
         private:
             Enviroment* env;
-            TaskManager * taskManager;
             const VehicleManager * vehicleManager;
-            const int RATE = 0;
-            double pAngle;
-
-            model::VehicleType convert(int a);
+            int RATE = 300;
+            double perfectBreak;
+            int startSize;
 
         public:
             virtual bool action();
@@ -26,5 +23,3 @@ namespace my{
 }
 
 #endif
-
-

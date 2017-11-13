@@ -113,6 +113,12 @@
 		<Unit filename="BaseBindService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="BindTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="BindTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="CategoryBindService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -211,9 +217,6 @@
 		</Unit>
 		<Unit filename="IlligalStateException.hpp">
 			<Option virtualFolder="my/Headers/" />
-		</Unit>
-		<Unit filename="Interruption.cpp">
-			<Option virtualFolder="my/Sources/" />
 		</Unit>
 		<Unit filename="Interruption.hpp">
 			<Option virtualFolder="my/Headers/" />

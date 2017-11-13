@@ -605,7 +605,7 @@
 1510518834 /home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.hpp
 	"Service.hpp"
 
-1510535944 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
+1510541863 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
 	"SmartStartGroupService.hpp"
 	"model/Vehicle.h"
 	<map>
@@ -621,6 +621,7 @@
 	"StopTask.hpp"
 	"AsyncScaleTask.hpp"
 	"ChangeActiveTask.hpp"
+	"BindTask.hpp"
 	"pi.hpp"
 
 1510528705 /home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.hpp
@@ -669,4 +670,10 @@
 
 1510534633 /home/daneel/prog/ai/CodeWars/solution/PerfectBreakService.hpp
 	"Service.hpp"
+
+1510541981 source:/home/daneel/prog/ai/CodeWars/solution/BindTask.cpp
+	"BindTask.hpp"
+
+1510542000 /home/daneel/prog/ai/CodeWars/solution/BindTask.hpp
+	"Task.hpp"
 

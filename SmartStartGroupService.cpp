@@ -16,6 +16,7 @@
 #include "StopTask.hpp"
 #include "AsyncScaleTask.hpp"
 #include "ChangeActiveTask.hpp"
+#include "BindTask.hpp"
 
 #include "pi.hpp"
 
@@ -180,9 +181,36 @@ namespace my{
 
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
+
+        /*taskManager->addTask(new SelectTask(0, 0, 1.5 * 148, 2 * 148));
+        taskManager->addTask(new BindTask("L"));
+
+
+        taskManager->addTask(new SelectTask(1.5 * 148, 0, 3 * 148, 2*148));
+        taskManager->addTask(new BindTask("R"));
+
+        taskManager->addTask(new SelectTask("Army"));
+        taskManager->addTask(new AsyncRotateTask(-PI/4, 0.0, 0.0));
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+
+        taskManager->addTask(new SelectTask("L"));
+        taskManager->addTask(new AsyncDeltaTask(-148, 148, 0.6*0.4));
+        taskManager->addTask(new SelectTask("R"));
+        taskManager->addTask(new AsyncDeltaTask(148, -148, 0.6*0.4));*/
+
+        taskManager->addTask(new SelectTask(0, 0, 1.5 * 148, 2 * 148));
+        taskManager->addTask(new AsyncDeltaTask(148, 0, 0.6*0.4));
+
+
+        taskManager->addTask(new SelectTask(1.5 * 148, 0, 3 * 148, 2*148));
+        taskManager->addTask(new AsyncDeltaTask(-148, 0, 0.6*0.4));
+
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
 
-        pAngle = PI / 2;
+        pAngle = PI / 2 - PI/4;
         env->putData("PAngle", &pAngle);
         return true;
     }

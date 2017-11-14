@@ -145,7 +145,7 @@
 1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/World.cpp
 	"World.h"
 
-1510537580 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
+1510628870 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
 	"MyStrategy.h"
 	"MagicConsts.hpp"
 	"GroupingService.hpp"
@@ -165,6 +165,11 @@
 	"TempService.hpp"
 	"AttackInterruption.hpp"
 	"PerfectBreakService.hpp"
+	"NuclearService.hpp"
+	"LoseDetectorService.hpp"
+	"RushDetectorService.hpp"
+	"SaveService.hpp"
+	"RushService.hpp"
 	<iostream>
 
 1510518885 /home/daneel/prog/ai/CodeWars/solution/MyStrategy.h
@@ -269,11 +274,11 @@
 1510175602 /home/daneel/prog/ai/CodeWars/solution/IlligalStateException.hpp
 	<exception>
 
-1510535557 source:/home/daneel/prog/ai/CodeWars/solution/MagicConsts.cpp
+1510626669 source:/home/daneel/prog/ai/CodeWars/solution/MagicConsts.cpp
 	"MagicConsts.hpp"
 	"pi.hpp"
 
-1510534697 /home/daneel/prog/ai/CodeWars/solution/MagicConsts.hpp
+1510626720 /home/daneel/prog/ai/CodeWars/solution/MagicConsts.hpp
 	<cstring>
 	"StateType.hpp"
 	"ActiveType.hpp"
@@ -442,7 +447,7 @@
 	<vector>
 	"Repos.hpp"
 
-1510423395 source:/home/daneel/prog/ai/CodeWars/solution/EnemySearchService.cpp
+1510620420 source:/home/daneel/prog/ai/CodeWars/solution/EnemySearchService.cpp
 	"EnemySearchService.hpp"
 	"StateType.hpp"
 	"Repos.hpp"
@@ -474,7 +479,7 @@
 	"Service.hpp"
 	"VehicleManager.hpp"
 
-1510537119 source:/home/daneel/prog/ai/CodeWars/solution/RotateService.cpp
+1510606264 source:/home/daneel/prog/ai/CodeWars/solution/RotateService.cpp
 	"RotateService.hpp"
 	"StateType.hpp"
 	"Repos.hpp"
@@ -486,6 +491,7 @@
 	"SpeedBarrierTask.hpp"
 	"SelectTask.hpp"
 	<cmath>
+	"AsyncScaleTask.hpp"
 	"SleepTask.hpp"
 	"pi.hpp"
 
@@ -590,9 +596,14 @@
 1510442779 /home/daneel/prog/ai/CodeWars/solution/CirculStartGroupService.hpp
 	"Service.hpp"
 
-1510518834 source:/home/daneel/prog/ai/CodeWars/solution/TempService.cpp
+1510627921 source:/home/daneel/prog/ai/CodeWars/solution/TempService.cpp
 	"TempService.hpp"
 	"Repos.hpp"
+	"SelectTask.hpp"
+	"SleepTask.hpp"
+	"AsyncRotateTask.hpp"
+	"AsyncDeltaTask.hpp"
+	"SpeedBarrierTask.hpp"
 	<iostream>
 
 1510518834 /home/daneel/prog/ai/CodeWars/solution/TempService.hpp
@@ -605,7 +616,7 @@
 1510518834 /home/daneel/prog/ai/CodeWars/solution/AsyncDeltaTask.hpp
 	"Service.hpp"
 
-1510541863 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
+1510578147 source:/home/daneel/prog/ai/CodeWars/solution/SmartStartGroupService.cpp
 	"SmartStartGroupService.hpp"
 	"model/Vehicle.h"
 	<map>
@@ -671,9 +682,63 @@
 1510534633 /home/daneel/prog/ai/CodeWars/solution/PerfectBreakService.hpp
 	"Service.hpp"
 
-1510541981 source:/home/daneel/prog/ai/CodeWars/solution/BindTask.cpp
+1510543071 source:/home/daneel/prog/ai/CodeWars/solution/BindTask.cpp
 	"BindTask.hpp"
 
-1510542000 /home/daneel/prog/ai/CodeWars/solution/BindTask.hpp
+1510543071 /home/daneel/prog/ai/CodeWars/solution/BindTask.hpp
 	"Task.hpp"
+
+1510606898 source:/home/daneel/prog/ai/CodeWars/solution/LoseDectorService.cpp
+
+1510611038 source:/home/daneel/prog/ai/CodeWars/solution/NuclearAttackTask.cpp
+	"NuclearAttackTask.hpp"
+
+1510626897 source:/home/daneel/prog/ai/CodeWars/solution/NuclearService.cpp
+	"NuclearService.hpp"
+	"Repos.hpp"
+	<cmath>
+	"NuclearAttackTask.hpp"
+
+1510619979 source:/home/daneel/prog/ai/CodeWars/solution/RushDetectorService.cpp
+	"RushDetectorService.hpp"
+	"ChangeStateTask.hpp"
+
+1510628407 source:/home/daneel/prog/ai/CodeWars/solution/RushService.cpp
+	"RushService.hpp"
+	"AsyncMoveTask.hpp"
+	"AsyncRotateTask.hpp"
+	"SelectTask.hpp"
+	"StopTask.hpp"
+	"SpeedBarrierTask.hpp"
+
+1510625920 source:/home/daneel/prog/ai/CodeWars/solution/SaveService.cpp
+	"SaveService.hpp"
+	"AsyncMoveTask.hpp"
+	"AsyncRotateTask.hpp"
+	"SelectTask.hpp"
+	"StopTask.hpp"
+	"SpeedBarrierTask.hpp"
+
+1510610870 /home/daneel/prog/ai/CodeWars/solution/NuclearAttackTask.hpp
+	"Task.hpp"
+
+1510626764 /home/daneel/prog/ai/CodeWars/solution/NuclearService.hpp
+	"Service.hpp"
+	"model/Game.h"
+
+1510619144 source:/home/daneel/prog/ai/CodeWars/solution/LoseDetectorService.cpp
+	"LoseDetectorService.hpp"
+	"ChangeStateTask.hpp"
+
+1510619130 /home/daneel/prog/ai/CodeWars/solution/LoseDetectorService.hpp
+	"Service.hpp"
+
+1510619693 /home/daneel/prog/ai/CodeWars/solution/RushDetectorService.hpp
+	"Service.hpp"
+
+1510626184 /home/daneel/prog/ai/CodeWars/solution/SaveService.hpp
+	"Service.hpp"
+
+1510626169 /home/daneel/prog/ai/CodeWars/solution/RushService.hpp
+	"Service.hpp"
 

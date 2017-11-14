@@ -18,7 +18,7 @@ namespace my{
     }
 
     bool EnemySearchService::action(){
-        if (env->getState() != StateType::Idle && env->getState() != StateType::Attack)
+        if (env->getState() != StateType::Idle && env->getState() != StateType::Attack && env->getState() != StateType::Rush)
             return false;
 
         double cx, cy;

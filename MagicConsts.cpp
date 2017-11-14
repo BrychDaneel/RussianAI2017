@@ -15,7 +15,7 @@ namespace my{
         instance.startActive = ActiveType::Normal;
         instance.startState = StateType::Idle;
         instance.minFightDamage = 300;
-        instance.defaultAttackSpeed = 0.4 * 0.6;
+        instance.defaultAttackSpeed = 0.8 * 0.4 * 0.6;
         instance.minRotateAngle = PI / 6;
         instance.minRotateDistance = 100;
         instance.minRotateTime = 240;
@@ -25,6 +25,14 @@ namespace my{
         instance.maxFightSquarCof = 900;
         instance.groupIntDistance = 200;
         instance.perfectBreakPercent = 0.5;
+        instance.nuclearDist = 50;
+        instance.minNuclearDistPercent = 0.7;
+        instance.maxNuclearDistPercent = 0.85;
+        instance.minVisionCof = 0.6;
+        instance.loseCof = 0.5;
+        instance.rushCof = 3;
+        instance.minRushTick = 15000;
+        instance.nuclearCancelRadius = 30;
         return instance;
     }
 
@@ -89,4 +97,36 @@ namespace my{
         return perfectBreakPercent;
     }
 
+    const double MagicConsts::getNuclearDist() const{
+        return nuclearDist;
+    }
+
+    const double MagicConsts::getMinNuclearDistPercent() const{
+        return minNuclearDistPercent;
+    }
+
+    const double MagicConsts::getMaxNuclearDistPercent() const{
+        return maxNuclearDistPercent;
+    }
+
+    const double MagicConsts::getMinVisionCof() const{
+        return minVisionCof;
+    }
+
+    const double MagicConsts::getLoseCof() const{
+        return loseCof;
+    }
+
+
+    const double MagicConsts::getRushCof() const{
+        return rushCof;
+    }
+
+    const double MagicConsts::getMinRushTick() const{
+        return minRushTick;
+    }
+
+    const double MagicConsts::getNuclearCancelRadius() const{
+        return nuclearCancelRadius;
+    }
 }

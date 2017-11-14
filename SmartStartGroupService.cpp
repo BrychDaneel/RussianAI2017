@@ -119,98 +119,111 @@ namespace my{
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new SelectTask(model::VehicleType::ARRV));
-        taskManager->addTask(new AsyncDeltaTask(0, (0 - arrvsY)*74 - 2.9));
+        taskManager->addTask(new AsyncDeltaTask(0, (0 - arrvsY)*74));
 
         taskManager->addTask(new SelectTask(model::VehicleType::IFV));
         if (IFVsY != 0)
             taskManager->addTask(new AsyncDeltaTask(0, (0 - IFVsY)*74));
 
         taskManager->addTask(new SelectTask(model::VehicleType::TANK));
-        if (tanksY != 1)
-            taskManager->addTask(new AsyncDeltaTask(0, (1 - tanksY)*74));
+        if (tanksY != 2)
+            taskManager->addTask(new AsyncDeltaTask(0, (2 - tanksY)*74));
 
         taskManager->addTask(new SelectTask(model::VehicleType::HELICOPTER));
         if (helicopterY != 0)
             taskManager->addTask(new AsyncDeltaTask(0, (0 - helicopterY)*74));
 
         taskManager->addTask(new SelectTask(model::VehicleType::FIGHTER));
-        if (fighterY != 1)
-            taskManager->addTask(new AsyncDeltaTask(0, (1 - fighterY)*74));
+        if (fighterY != 2)
+            taskManager->addTask(new AsyncDeltaTask(0, (2 - fighterY)*74));
 
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
 
-        taskManager->addTask(new SelectTask("Army"));
-        taskManager->addTask(new AsyncScaleTask(0, 0, 2));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new ChangeActiveTask(ActiveType::Normal));
 
+
+        for (int i=0; i<10; i++){
+            double left = 0;
+            double top = 16 + 5.8 * (9-i);
+            double right = 3*74;
+            double bottom = 16 + 5.8 * (10-i);
+            taskManager->addTask(new SelectTask(left, top, right, bottom));
+            taskManager->addTask(new AsyncDeltaTask(0, 5.8 * (9-i)));
+        }
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
+
+        taskManager->addTask(new SelectTask(model::VehicleType::ARRV));
+        taskManager->addTask(new AsyncDeltaTask(0, 5.8));
+        taskManager->addTask(new SpeedBarrierTask(0.1));
+
         for (int it = 1; it<=5; it++){
-            int dl = 30;
-            if (it==4 || it==3)
-                dl = 148 + 30;
 
             for (int i=0; i<3; i++){
                 double left = 0;
-                double top = dl + 116/3*i;
-                double right = 3*148;
-                double bottom = dl + 116/3*(i+1);
+                double right = 3*74;
+
+                double top = 16 + 116/3*i;
+                double bottom = 16 + 116/3*(i+1);
+                if (it==4 || it==3){
+                    top = 74*2 + 16 + 58/3*i;
+                    bottom = 74*2 + 16 + 58/3*(i+1);
+                }
+                if (it==1)
+                    top += 5.8;
+                    bottom += 5.8;
+
                 taskManager->addTask(new SelectTask(left, top, right, bottom, convert(it)));
-                taskManager->addTask(new AsyncDeltaTask( (i - xs[it])*148 ,0));
+                taskManager->addTask(new AsyncDeltaTask( (i - xs[it])*74 ,0));
             }
         }
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
         for (int i=0; i<2; i++){
-            double left = i*148;
-            double top = 0;
-            double right = (i+1)*148;
-            double bottom = 148*3;
+            double left = i*74;
+            double top = 16;
+            double right = (i+1)*74;
+            double bottom = 74*2;
             taskManager->addTask(new SelectTask(left, top, right, bottom));
             taskManager->addTask(new AsyncDeltaTask(0, (2-i)*116/3));
+
+            left = i*74;
+            top = 74*2 + 16;
+            right = (i+1)*74;
+            bottom = 74*3;
+            taskManager->addTask(new SelectTask(left, top, right, bottom));
+            taskManager->addTask(new AsyncDeltaTask(0, (2-i)*58/3));
         }
 
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
-        taskManager->addTask(new SelectTask(0, 0, 3 * 148, 148));
-        taskManager->addTask(new AsyncDeltaTask(0, 148, 0.6*0.4));
+        taskManager->addTask(new SelectTask(0, 0, 3 * 74, 2 * 74));
+        taskManager->addTask(new AsyncDeltaTask(0, 74, 0.6*0.4));
 
-        taskManager->addTask(new SelectTask(0, 148, 3 * 148, 2*148));
-        taskManager->addTask(new AsyncDeltaTask(0, -148, 0.6*0.4));
+        taskManager->addTask(new SelectTask(0, 16 + 2 * 74, 3 * 74, 3 * 74));
+        taskManager->addTask(new AsyncDeltaTask(0, -74, 0.6*0.4));
 
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
 
-        /*taskManager->addTask(new SelectTask(0, 0, 1.5 * 148, 2 * 148));
-        taskManager->addTask(new BindTask("L"));
+        taskManager->addTask(new SelectTask(0, 0, 1.5 * 74, 3 * 74));
+        taskManager->addTask(new AsyncDeltaTask(74, 0, 0.6*0.4));
 
 
-        taskManager->addTask(new SelectTask(1.5 * 148, 0, 3 * 148, 2*148));
-        taskManager->addTask(new BindTask("R"));
+        taskManager->addTask(new SelectTask(1.5 * 74, 0, 3 * 74, 3*74));
+        taskManager->addTask(new AsyncDeltaTask(-74, 0, 0.6*0.4));
+
+        taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new SelectTask("Army"));
-        taskManager->addTask(new AsyncRotateTask(-PI/4, 0.0, 0.0));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
-
-
-        taskManager->addTask(new SelectTask("L"));
-        taskManager->addTask(new AsyncDeltaTask(-148, 148, 0.6*0.4));
-        taskManager->addTask(new SelectTask("R"));
-        taskManager->addTask(new AsyncDeltaTask(148, -148, 0.6*0.4));*/
-
-        taskManager->addTask(new SelectTask(0, 0, 1.5 * 148, 2 * 148));
-        taskManager->addTask(new AsyncDeltaTask(148, 0, 0.6*0.4));
-
-
-        taskManager->addTask(new SelectTask(1.5 * 148, 0, 3 * 148, 2*148));
-        taskManager->addTask(new AsyncDeltaTask(-148, 0, 0.6*0.4));
-
+        taskManager->addTask(new AsyncScaleTask(0.1));
         taskManager->addTask(new SpeedBarrierTask(0.1));
 
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
 
-        pAngle = PI / 2 - PI/4;
+        pAngle = PI / 2;
         env->putData("PAngle", &pAngle);
         return true;
     }

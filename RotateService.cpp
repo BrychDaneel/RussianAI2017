@@ -11,6 +11,7 @@
 #include "SpeedBarrierTask.hpp"
 #include "SelectTask.hpp"
 #include <cmath>
+#include "AsyncScaleTask.hpp"
 
 #define SQR(X) ((X)*(X))
 #define ABS(X) ((X) > 0 ? (X) : -(X))
@@ -55,13 +56,14 @@ namespace my{
         if (env->getData("PAngle") != nullptr){
             perfect = true;
             pAngle = *(double*)env->getData("PAngle");
+
         }
 
 
         double distance = sqrt(SQR(attackX) + SQR(attackY));
 
-        double attackAngle = atan2(attackX, attackY);
-        double angle = atan2(angleX, angleY);
+        double attackAngle = atan2(attackY, attackX);
+        double angle = atan2(angleY, angleX);
         if (perfect)
             angle = pAngle;
 
@@ -73,17 +75,24 @@ namespace my{
 
         double enemySpeed = speedManager->getMaxEnemySpeed();
         if (ABS(rot) > minRotateAngle && distance > minRotateDistance && (enemySpeed == 0 || distance / enemySpeed > minRotateTime)){
+            if (perfect){
+                taskManager->addTask(new AsyncScaleTask(1.5));
+                taskManager->addTask(new SpeedBarrierTask(0.1));
+            }
             taskManager->addTask(new ChangeStateTask(StateType::Group));
             taskManager->addTask(new SelectTask("Army"));
             taskManager->addTask(new AsyncRotateTask(rot, 0.0, 0.0));
             //taskManager->addTask(new SleepTask(1000));
             taskManager->addTask(new SpeedBarrierTask(0.1));
-            taskManager->addTask(new ChangeStateTask(StateType::Idle));
 
             if (perfect){
+                taskManager->addTask(new AsyncScaleTask(0.666));
+                taskManager->addTask(new SpeedBarrierTask(0.1));
                 pAngle = attackAngle;
                 env->putData("PAngle", &pAngle);
             }
+
+            taskManager->addTask(new ChangeStateTask(StateType::Idle));
             return true;
         }
 

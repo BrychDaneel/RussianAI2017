@@ -26,6 +26,14 @@ namespace my{
             double groupIntDistance;
             double perfectBreakPercent;
             int minRotateTime;
+            double nuclearDist;
+            double minNuclearDistPercent;
+            double maxNuclearDistPercent;
+            double minVisionCof;
+            double rushCof;
+            double loseCof;
+            double minRushTick;
+            double nuclearCancelRadius;
         public:
             MagicConsts();
             static MagicConsts getDefaulInstance();
@@ -44,6 +52,14 @@ namespace my{
             const int getMinRotateTime() const;
             const int getGroupIntDistance() const;
             const double getPerfectBreakPercent() const;
+            const double getNuclearDist() const;
+            const double getMinNuclearDistPercent() const;
+            const double getMaxNuclearDistPercent() const;
+            const double getMinVisionCof() const;
+            const double getLoseCof() const;
+            const double getRushCof() const;
+            const double getMinRushTick() const;
+            const double getNuclearCancelRadius() const;
     };
 }
 

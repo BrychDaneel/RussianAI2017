@@ -224,6 +224,12 @@
 		<Unit filename="InvalidAngleException.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
+		<Unit filename="LoseDetectorService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="LoseDetectorService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="MagicConsts.cpp">
 			<Option virtualFolder="my/Sources/" />
 		</Unit>
@@ -238,6 +244,18 @@
 		</Unit>
 		<Unit filename="MyStrategy.cpp" />
 		<Unit filename="MyStrategy.h" />
+		<Unit filename="NuclearAttackTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="NuclearAttackTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
+		<Unit filename="NuclearService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="NuclearService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="PerfectBreakService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -266,6 +284,24 @@
 		</Unit>
 		<Unit filename="Runner.cpp" />
 		<Unit filename="Runner.h" />
+		<Unit filename="RushDetectorService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="RushDetectorService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="RushService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="RushService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="SaveService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="SaveService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="SelectTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>

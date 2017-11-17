@@ -14,7 +14,7 @@ namespace my{
             Enviroment * env;
             TaskManager * taskManager;
             GroupManager * groupManager;
-            int RATE = 120;
+            int RATE = 400;
 
             int farNuclearCount;
             double minFarRange;

@@ -145,7 +145,7 @@
 1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/World.cpp
 	"World.h"
 
-1510853508 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
+1510953165 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
 	"MyStrategy.h"
 	"MagicConsts.hpp"
 	"GroupingService.hpp"
@@ -854,6 +854,6 @@
 	"SelectTask.hpp"
 	"ChangeActiveTask.hpp"
 
-1510950069 /home/daneel/prog/ai/CodeWars/solution/FarNuclearService.hpp
+1510953599 /home/daneel/prog/ai/CodeWars/solution/FarNuclearService.hpp
 	"Service.hpp"
 

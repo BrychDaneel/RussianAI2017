@@ -65,7 +65,7 @@ MyStrategy::MyStrategy() :
     serviceManager.addService(new my::FrontMoveService());
 
     serviceManager.addService(new my::NuclearService());
-    serviceManager.addService(new my::FarNuclearService());
+    //serviceManager.addService(new my::FarNuclearService());
 
     serviceManager.addService(new my::RegroupService());
 
@@ -81,8 +81,8 @@ MyStrategy::MyStrategy() :
 
     serviceManager.addService(new my::GotoAngleService());
 
-    //serviceManager.addService(new my::PascudaService(), 1);
-    //serviceManager.addService(new my::PascudaService(false), 2);
+    serviceManager.addService(new my::PascudaService(), 1);
+    serviceManager.addService(new my::PascudaService(false), 2);
     serviceManager.addService(new my::GuardService(), 3);
 
     serviceManager.addCommonInterruption(new my::NuclearActiveInterruption());

@@ -143,6 +143,9 @@
 		<Unit filename="CirculStartGroupService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="CommonInterruption.hpp">
+			<Option virtualFolder="my/Headers/" />
+		</Unit>
 		<Unit filename="DamageManager.cpp">
 			<Option virtualFolder="my/Sources/" />
 		</Unit>
@@ -155,6 +158,12 @@
 		<Unit filename="Data.hpp">
 			<Option virtualFolder="my/Headers/" />
 		</Unit>
+		<Unit filename="DismissTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="DismissTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
+		</Unit>
 		<Unit filename="EnemySearchService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -166,6 +175,12 @@
 		</Unit>
 		<Unit filename="Enviroment.hpp">
 			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="FarNuclearService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="FarNuclearService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
 		<Unit filename="FightDetectorService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
@@ -209,6 +224,12 @@
 		<Unit filename="GroupingService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="GuardService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="GuardService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="HealAngleDetectorService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
@@ -244,16 +265,34 @@
 		</Unit>
 		<Unit filename="MyStrategy.cpp" />
 		<Unit filename="MyStrategy.h" />
+		<Unit filename="NuclearActiveInterruption.cpp">
+			<Option virtualFolder="my/Sources/Interruptions/" />
+		</Unit>
+		<Unit filename="NuclearActiveInterruption.hpp">
+			<Option virtualFolder="my/Headers/Interruptions/" />
+		</Unit>
 		<Unit filename="NuclearAttackTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
 		<Unit filename="NuclearAttackTask.hpp">
 			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
+		<Unit filename="NuclearInterruption.cpp">
+			<Option virtualFolder="my/Sources/Interruptions/" />
+		</Unit>
+		<Unit filename="NuclearInterruption.hpp">
+			<Option virtualFolder="my/Headers/Interruptions/" />
+		</Unit>
 		<Unit filename="NuclearService.cpp">
 			<Option virtualFolder="my/Sources/Services/" />
 		</Unit>
 		<Unit filename="NuclearService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
+		<Unit filename="PascudaService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="PascudaService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
 		<Unit filename="PerfectBreakService.cpp">
@@ -329,6 +368,12 @@
 		<Unit filename="SmartStartGroupService.hpp">
 			<Option virtualFolder="my/Headers/Services/" />
 		</Unit>
+		<Unit filename="SpecGroupService.cpp">
+			<Option virtualFolder="my/Sources/Services/" />
+		</Unit>
+		<Unit filename="SpecGroupService.hpp">
+			<Option virtualFolder="my/Headers/Services/" />
+		</Unit>
 		<Unit filename="SpeedBarrierTask.cpp">
 			<Option virtualFolder="my/Sources/Tasks/" />
 		</Unit>
@@ -372,6 +417,12 @@
 		</Unit>
 		<Unit filename="VehicleManager.hpp">
 			<Option virtualFolder="my/Headers/" />
+		</Unit>
+		<Unit filename="WaitTask.cpp">
+			<Option virtualFolder="my/Sources/Tasks/" />
+		</Unit>
+		<Unit filename="WaitTask.hpp">
+			<Option virtualFolder="my/Headers/Tasks/" />
 		</Unit>
 		<Unit filename="csimplesocket/ActiveSocket.cpp" />
 		<Unit filename="csimplesocket/ActiveSocket.h" />

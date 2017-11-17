@@ -21,6 +21,7 @@ namespace my{
             virtual ~TaskManager();
             void addTask(Task* task);
             void clear();
+            bool canInterrupt();
             bool action();
     };
 }

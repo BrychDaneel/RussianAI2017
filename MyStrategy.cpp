@@ -23,6 +23,12 @@
 #include "RushDetectorService.hpp"
 #include "SaveService.hpp"
 #include "RushService.hpp"
+#include "SpecGroupService.hpp"
+#include "PascudaService.hpp"
+#include "GuardService.hpp"
+#include "NuclearInterruption.hpp"
+#include "NuclearActiveInterruption.hpp"
+#include "FarNuclearService.hpp"
 #ifdef DEBUG
     #include <iostream>
 #endif
@@ -44,13 +50,14 @@ MyStrategy::MyStrategy() :
     enviroment(consts),
     serviceManager(enviroment)
 {
+    //serviceManager.addService(new my::TempService(), 1);
 
     serviceManager.addService(new my::BaseBindService());
 
-    serviceManager.addService(new my::SmartStartGroupService());
-    serviceManager.addInterruption(new my::AttackInterruption());
+    serviceManager.addService(new my::SpecGroupService());
 
-    //serviceManager.addService(new my::TempService());
+    serviceManager.addService(new my::SmartStartGroupService());
+    //serviceManager.addInterruption(new my::AttackInterruption());
 
     serviceManager.addService(new my::FightDetectorService());
 
@@ -58,6 +65,7 @@ MyStrategy::MyStrategy() :
     serviceManager.addService(new my::FrontMoveService());
 
     serviceManager.addService(new my::NuclearService());
+    serviceManager.addService(new my::FarNuclearService());
 
     serviceManager.addService(new my::RegroupService());
 
@@ -72,6 +80,18 @@ MyStrategy::MyStrategy() :
     serviceManager.addService(new my::PerfectBreakService());
 
     serviceManager.addService(new my::GotoAngleService());
+
+    serviceManager.addService(new my::PascudaService(), 1);
+    serviceManager.addService(new my::PascudaService(false), 2);
+    serviceManager.addService(new my::GuardService(), 3);
+
+    serviceManager.addCommonInterruption(new my::NuclearActiveInterruption());
+
+    serviceManager.addInterruption(new my::NuclearInterruption("Army", true, true), 0);
+    serviceManager.addInterruption(new my::NuclearInterruption("PascudaTop", false), 1);
+    serviceManager.addInterruption(new my::NuclearInterruption("PascudaRight", false), 2);
+    serviceManager.addInterruption(new my::NuclearInterruption("Guard", false), 3);
+
     serviceManager.addService(new my::LoseDetectorService());
     serviceManager.addService(new my::RushDetectorService());
 

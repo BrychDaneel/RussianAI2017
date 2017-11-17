@@ -1,23 +1,23 @@
 #pragma once
-#ifndef _MY_ENEMY_SEARCH_SERVICE_HPP_
-#define _MY_ENEMY_SEARCH_SERVICE_HPP_
+#ifndef _MY_FAR_NUCLEAR_SERVICE_HPP_
+#define _MY_FAR_NUCLEAR_SERVICE_HPP_
 
 
 #include "Service.hpp"
-#include "VehicleManager.hpp"
 
 
 namespace my{
-    class EnemySearchService : public Service{
+    class FarNuclearService : public Service{
         private:
-            Enviroment* env;
+            const model::Game * game;
             const VehicleManager * vehicleManager;
+            Enviroment * env;
+            TaskManager * taskManager;
             GroupManager * groupManager;
-            const int RATE = 120;
-            double enemyX;
-            double enemyY;
-            double myX;
-            double myY;
+            int RATE = 420;
+
+            int farNuclearCount;
+            double minFarRange;
 
         public:
             virtual bool action();
@@ -25,7 +25,7 @@ namespace my{
             virtual void setup(Enviroment& env, TaskManager& taskManager, ActionManager& actionManager, GroupManager& groupManager);
     };
 }
-#endif
 
+#endif
 
 

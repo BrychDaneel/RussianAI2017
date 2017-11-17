@@ -17,6 +17,7 @@
 #include "AsyncScaleTask.hpp"
 #include "ChangeActiveTask.hpp"
 #include "BindTask.hpp"
+#include "DismissTask.hpp"
 
 #include "pi.hpp"
 
@@ -49,7 +50,7 @@ namespace my{
 
     bool SmartStartGroupService::action(){
 
-        taskManager->addTask(new ChangeStateTask(StateType::Group));
+        taskManager->addTask(new ChangeStateTask(StateType::StartGroup));
 
         int ground[3][3];
         int air[3][3];
@@ -76,10 +77,14 @@ namespace my{
         tanksX = ((int)cx) / 74;
         ground[tanksX][tanksY] = 3;
 
-        Repos::getCenter(vehicleManager->getmyFighters(), cx, cy);
-        fighterY = ((int)cy) / 74;
-        fighterX = ((int)cx) / 74;
+        double fightersMinX, fightersMinY, fightersMaxX, fightersMaxY;
+        Repos::getBox(vehicleManager->getmyFighters(), fightersMinX, fightersMinY, fightersMaxX, fightersMaxY);
+        fighterY = ((int)fightersMinY) / 74;
+        fighterX = ((int)fightersMinX) / 74;
         air[fighterX][fighterY] = 4;
+
+        taskManager->addTask(new SelectTask(fightersMinX, fightersMinY, fightersMinX + 74, fightersMinY + 74));
+        taskManager->addTask(new BindTask("ArmyFighters"));
 
         Repos::getCenter(vehicleManager->getmyHelicopters(), cx, cy);
         helicopterY = ((int)cy) / 74;
@@ -88,7 +93,6 @@ namespace my{
 
         int xs[6];
 
-        taskManager->addTask(new ChangeActiveTask(ActiveType::Hight));
 
         int count = 0;
         for (int ii=0; ii<3; ii++)
@@ -110,13 +114,16 @@ namespace my{
                     xs[air[i][ii]] = count;
                     int d = count - i;
                     if (d){
-                        taskManager->addTask(new SelectTask(convert(air[i][ii])));
+                        if (convert(air[i][ii]) == model::VehicleType::FIGHTER)
+                            taskManager->addTask(new SelectTask("ArmyFighters"));
+                        else
+                            taskManager->addTask(new SelectTask(convert(air[i][ii])));
                         taskManager->addTask(new AsyncDeltaTask(d*74, 0));
                     }
                     count ++;
                 }
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
         taskManager->addTask(new SelectTask(model::VehicleType::ARRV));
         taskManager->addTask(new AsyncDeltaTask(0, (0 - arrvsY)*74));
@@ -133,15 +140,12 @@ namespace my{
         if (helicopterY != 0)
             taskManager->addTask(new AsyncDeltaTask(0, (0 - helicopterY)*74));
 
-        taskManager->addTask(new SelectTask(model::VehicleType::FIGHTER));
+        taskManager->addTask(new SelectTask("ArmyFighters"));
         if (fighterY != 2)
             taskManager->addTask(new AsyncDeltaTask(0, (2 - fighterY)*74));
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
-
-
-        taskManager->addTask(new ChangeActiveTask(ActiveType::Normal));
 
 
         for (int i=0; i<10; i++){
@@ -152,24 +156,24 @@ namespace my{
             taskManager->addTask(new SelectTask(left, top, right, bottom));
             taskManager->addTask(new AsyncDeltaTask(0, 5.8 * (9-i)));
         }
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
 
         taskManager->addTask(new SelectTask(model::VehicleType::ARRV));
         taskManager->addTask(new AsyncDeltaTask(0, 5.8));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
         for (int it = 1; it<=5; it++){
 
-            for (int i=0; i<3; i++){
+            for (int i=0; i<2; i++){
                 double left = 0;
                 double right = 3*74;
 
-                double top = 16 + 116/3*i;
-                double bottom = 16 + 116/3*(i+1);
+                double top = 16 + 116/2*i;
+                double bottom = 16 + 116/2*(i+1);
                 if (it==4 || it==3){
-                    top = 74*2 + 16 + 58/3*i;
-                    bottom = 74*2 + 16 + 58/3*(i+1);
+                    top = 74*2 + 16 + 58/2*i;
+                    bottom = 74*2 + 16 + 58/2*(i+1);
                 }
                 if (it==1)
                     top += 5.8;
@@ -179,25 +183,25 @@ namespace my{
                 taskManager->addTask(new AsyncDeltaTask( (i - xs[it])*74 ,0));
             }
         }
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
-        for (int i=0; i<2; i++){
+        for (int i=0; i<1; i++){
             double left = i*74;
             double top = 16;
             double right = (i+1)*74;
             double bottom = 74*2;
             taskManager->addTask(new SelectTask(left, top, right, bottom));
-            taskManager->addTask(new AsyncDeltaTask(0, (2-i)*116/3));
+            taskManager->addTask(new AsyncDeltaTask(0, (1-i)*116/2));
 
             left = i*74;
             top = 74*2 + 16;
             right = (i+1)*74;
             bottom = 74*3;
             taskManager->addTask(new SelectTask(left, top, right, bottom));
-            taskManager->addTask(new AsyncDeltaTask(0, (2-i)*58/3));
+            taskManager->addTask(new AsyncDeltaTask(0, (1-i)*58/2));
         }
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
         taskManager->addTask(new SelectTask(0, 0, 3 * 74, 2 * 74));
         taskManager->addTask(new AsyncDeltaTask(0, 74, 0.6*0.4));
@@ -205,7 +209,7 @@ namespace my{
         taskManager->addTask(new SelectTask(0, 16 + 2 * 74, 3 * 74, 3 * 74));
         taskManager->addTask(new AsyncDeltaTask(0, -74, 0.6*0.4));
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
 
         taskManager->addTask(new SelectTask(0, 0, 1.5 * 74, 3 * 74));
@@ -215,11 +219,11 @@ namespace my{
         taskManager->addTask(new SelectTask(1.5 * 74, 0, 3 * 74, 3*74));
         taskManager->addTask(new AsyncDeltaTask(-74, 0, 0.6*0.4));
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
         taskManager->addTask(new SelectTask("Army"));
         taskManager->addTask(new AsyncScaleTask(0.1));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
 
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
 

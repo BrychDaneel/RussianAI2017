@@ -47,11 +47,11 @@ namespace my{
         vehicleManager = new VehicleManager(world->getMyPlayer().getId());
     }
 
-    model::TerrainType Enviroment::getTerrain(const int x, const int y){
+    model::TerrainType Enviroment::getTerrain(const int x, const int y) const{
         return terrain[x][y];
     }
 
-    model::WeatherType Enviroment::getWeather(const int x, const int y){
+    model::WeatherType Enviroment::getWeather(const int x, const int y) const{
         return weather[x][y];
     }
 
@@ -117,6 +117,44 @@ namespace my{
 
     void Enviroment::removeData(const string name){
         data.remove(name);
+    }
+
+    const bool Enviroment::canNuclear() const{
+        return me->getRemainingNuclearStrikeCooldownTicks() == 0;
+    }
+
+    const double Enviroment::getAeroVisionCof(const double x, const double y) const{
+        switch (getWeather(x / 32, y / 32)){
+            case model::WeatherType::CLEAR:
+                return game->getClearWeatherVisionFactor();
+            case model::WeatherType::CLOUD:
+                return game->getCloudWeatherVisionFactor();
+            case model::WeatherType::RAIN:
+                return game->getRainWeatherVisionFactor();
+            default:
+                return 1;
+        }
+    }
+
+    const double Enviroment::getGroundVisionCof(const double x, const double y) const{
+        switch (getTerrain(x / 32, y / 32)){
+            case model::TerrainType::FOREST :
+                return game->getForestTerrainVisionFactor();
+            case model::TerrainType::PLAIN :
+                return game->getPlainTerrainVisionFactor();
+            case model::TerrainType::SWAMP :
+                return game->getSwampTerrainVisionFactor();
+            default:
+                return 1;
+        }
+    }
+
+    const double Enviroment::getTryVisionRange(long long id) const{
+        model::Vehicle vehicle = (*vehicleManager->getAll().find(id)).second;
+        if (vehicle.isAerial())
+            return vehicle.getVisionRange() * getAeroVisionCof(vehicle.getX(), vehicle.getY());
+        else
+            return vehicle.getVisionRange() * getGroundVisionCof(vehicle.getX(), vehicle.getY());
     }
 }
 

@@ -61,6 +61,11 @@ namespace my{
         else
             isNope = false;
 
+        if (actions.front().getAction() == model::ActionType::TACTICAL_NUCLEAR_STRIKE)
+            isNuclear = true;
+        else
+            isNuclear = false;
+
         #ifdef DEBUG
            print(actions.front().getAction());
         #endif
@@ -89,6 +94,7 @@ namespace my{
         move.setAction(model::ActionType::NONE);
         moveHelper.assign(move);
         isNope = true;
+        isNuclear = false;
         #ifdef DEBUG
            print(model::ActionType::NONE);
         #endif
@@ -96,6 +102,10 @@ namespace my{
 
     bool ActionManager::lastIsNope(){
         return isNope;
+    }
+
+    bool ActionManager::lastIsNuclear(){
+        return isNuclear;
     }
 
     void ActionManager::nope(){

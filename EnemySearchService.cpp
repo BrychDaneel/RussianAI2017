@@ -15,6 +15,7 @@ namespace my{
     void EnemySearchService::setup(Enviroment& env, TaskManager& taskManager, ActionManager& actionManager, GroupManager& groupManager){
         this->env = &env;
         vehicleManager = env.getVehicleManager();
+        this->groupManager = &groupManager;
     }
 
     bool EnemySearchService::action(){
@@ -22,7 +23,11 @@ namespace my{
             return false;
 
         double cx, cy;
-        Repos::getCenter(vehicleManager->getMy(), cx, cy);
+        std::vector<model::Vehicle> army = groupManager->getVehicles("Army");
+        if (army.empty())
+            return false;
+
+        Repos::getCenter(army, cx, cy);
 
         long long near = -1;
         double dist;

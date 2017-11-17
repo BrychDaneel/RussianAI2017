@@ -20,6 +20,9 @@ namespace my{
     }
 
     bool FightDetectorService::action(){
+        if (env->getState() == StateType::Rush || env->getState() == StateType::Save)
+            return false;
+
         bool isFight = damageManager->getSumDamage() >= minFightDamage;
         if (isFight && env->getState() != StateType::Figth){
             taskManager->addTask(new ChangeStateTask(StateType::Figth));

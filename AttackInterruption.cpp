@@ -50,7 +50,6 @@ namespace my{
         first = false;
 
         taskManager->clear();
-        actionManager->clear();
 
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
         taskManager->addTask(new ChangeActiveTask(ActiveType::Normal));

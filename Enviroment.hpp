@@ -54,8 +54,8 @@ namespace my{
 
             void update(const model::Player& me, const model::World& world, const model::Game& game, model::Move& move);
 
-            model::TerrainType getTerrain(const int x, const int y);
-            model::WeatherType getWeather(const int x, const int y);
+            model::TerrainType getTerrain(const int x, const int y) const;
+            model::WeatherType getWeather(const int x, const int y) const;
 
             const VehicleManager* getVehicleManager();
             const DamageManager& getDamageManager();
@@ -77,6 +77,14 @@ namespace my{
             void putData(const string name, void * value);
             void removeData(const string name);
             void* getData(const string name);
+
+            void nuclearAttack();
+            const bool canNuclear() const;
+
+            const double getAeroVisionCof(const double x, const double y) const;
+            const double getGroundVisionCof(const double x, const double y) const;
+
+            const double getTryVisionRange(long long id) const;
     };
 }
 

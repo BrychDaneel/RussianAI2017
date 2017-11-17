@@ -22,18 +22,20 @@ namespace my{
             double height;
             double left, top, right, bottom;
             model::VehicleType type;
-            bool firstRun = true;
+            int tick = 0;
+            bool interrupt;
 
             enum class SelectType{All, GID, Name, Rect, TypeAndRect, Type} selectType;
         public:
-            SelectTask();
-            SelectTask(int groupId);
-            SelectTask(const std::string & groupName);
-            SelectTask(double left, double top, double right, double bottom);
-            SelectTask(double left, double top, double right, double bottom, model::VehicleType type);
-            SelectTask(model::VehicleType type);
+            SelectTask(bool interrupt=true);
+            SelectTask(int groupId, bool interrupt=true);
+            SelectTask(const char * groupName, bool interrupt=true);
+            SelectTask(double left, double top, double right, double bottom, bool interrupt=true);
+            SelectTask(double left, double top, double right, double bottom, model::VehicleType type, bool interrupt=true);
+            SelectTask(model::VehicleType type, bool interrupt=true);
             virtual bool action();
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
+            virtual bool canInterrupt();
     };
 }
 #endif

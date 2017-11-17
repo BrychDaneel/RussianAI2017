@@ -5,6 +5,7 @@ namespace my{
     bool BaseBindService::action(){
 
         actionManager->select(0, 0, width, height);
+        groupManager->bind("All");
         groupManager->bind("Army");
         return true;
     }

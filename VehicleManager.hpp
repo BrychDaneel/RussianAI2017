@@ -6,6 +6,8 @@
 #include "model/Vehicle.h"
 #include "model/VehicleUpdate.h"
 #include <map>
+#include "model/TerrainType.h"
+#include "model/WeatherType.h"
 
 
 namespace my{
@@ -25,6 +27,9 @@ namespace my{
             VehicleManager(long long myId);
             void add(const model::Vehicle vehicle);
             void update(const model::VehicleUpdate vehicleUpdate);
+
+            const int getNeighboardCount(int unitId, double radius) const;
+
 
             const std::map<long long, model::Vehicle>& getAll() const;
             const std::map<long long, model::Vehicle>& getMy() const;

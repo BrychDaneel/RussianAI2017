@@ -1,21 +1,23 @@
 #pragma once
+#ifndef _MY_COMMON_INTERRUPTION_HPP_
+#define _MY_COMMON_INTERRUPTION_HPP_
 
-#ifndef _MY_TASK_HPP_
-#define _MY_TASK_HPP_
 
-
+#include "TaskManager.hpp"
 #include "Enviroment.hpp"
 #include "ActionManager.hpp"
 #include "GroupManager.hpp"
 
 
 namespace my{
-    class Task{
+    class CommonInterruption{
         public:
-            virtual ~Task(){};
-            virtual bool action() = 0;
-            virtual bool canInterrupt(){return false;}
+            virtual ~CommonInterruption(){};
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager) = 0;
+            virtual void action() = 0;
     };
 }
+
+
 #endif
+

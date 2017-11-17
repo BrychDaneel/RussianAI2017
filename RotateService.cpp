@@ -75,19 +75,22 @@ namespace my{
 
         double enemySpeed = speedManager->getMaxEnemySpeed();
         if (ABS(rot) > minRotateAngle && distance > minRotateDistance && (enemySpeed == 0 || distance / enemySpeed > minRotateTime)){
-            if (perfect){
-                taskManager->addTask(new AsyncScaleTask(1.5));
-                taskManager->addTask(new SpeedBarrierTask(0.1));
-            }
             taskManager->addTask(new ChangeStateTask(StateType::Group));
-            taskManager->addTask(new SelectTask("Army"));
-            taskManager->addTask(new AsyncRotateTask(rot, 0.0, 0.0));
-            //taskManager->addTask(new SleepTask(1000));
-            taskManager->addTask(new SpeedBarrierTask(0.1));
 
             if (perfect){
+                taskManager->addTask(new SelectTask("Army"));
+                taskManager->addTask(new AsyncScaleTask(1.5));
+                taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
+            }
+
+            taskManager->addTask(new SelectTask("Army"));
+            taskManager->addTask(new AsyncRotateTask(rot, 0.0, 0.0));
+            taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
+
+            if (perfect){
+                taskManager->addTask(new SelectTask("Army"));
                 taskManager->addTask(new AsyncScaleTask(0.666));
-                taskManager->addTask(new SpeedBarrierTask(0.1));
+                taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
                 pAngle = attackAngle;
                 env->putData("PAngle", &pAngle);
             }

@@ -2,40 +2,51 @@
 
 
 namespace my{
-    SelectTask::SelectTask(){
+    SelectTask::SelectTask(bool interrupt){
         selectType = SelectType::All;
+
+        this->interrupt = interrupt;
     }
 
-    SelectTask::SelectTask(int groupId){
+    SelectTask::SelectTask(int groupId, bool interrupt){
         selectType = SelectType::GID;
         gid = groupId;
+
+        this->interrupt = interrupt;
     }
 
-    SelectTask::SelectTask(const std::string & groupName){
+    SelectTask::SelectTask(const char * groupName, bool interrupt){
         selectType = SelectType::Name;
         name = groupName;
+        this->interrupt = interrupt;
     }
 
-    SelectTask::SelectTask(double left, double top, double right, double bottom){
+    SelectTask::SelectTask(double left, double top, double right, double bottom, bool interrupt){
         selectType = SelectType::Rect;
         this->left = left;
         this->top = top;
         this->right = right;
         this->bottom = bottom;
+
+        this->interrupt = interrupt;
     }
 
-    SelectTask::SelectTask(double left, double top, double right, double bottom, model::VehicleType type){
+    SelectTask::SelectTask(double left, double top, double right, double bottom, model::VehicleType type, bool interrupt){
         selectType = SelectType::TypeAndRect;
         this->left = left;
         this->top = top;
         this->right = right;
         this->bottom = bottom;
         this->type = type;
+
+        this->interrupt = interrupt;
     }
 
-    SelectTask::SelectTask(model::VehicleType type){
+    SelectTask::SelectTask(model::VehicleType type, bool interrupt){
         selectType = SelectType::Type;
         this->type = type;
+
+        this->interrupt = interrupt;
     }
 
     void SelectTask::setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager){
@@ -46,10 +57,11 @@ namespace my{
     }
 
     bool SelectTask::action(){
-        if (!firstRun)
+        tick++;
+        if (tick > 2)
             return false;
-
-        firstRun = false;
+        if (tick == 1)
+            return true;
 
         switch (selectType){
             case SelectType::All:
@@ -73,6 +85,12 @@ namespace my{
         }
 
         return true;
+    }
+
+    bool SelectTask::canInterrupt(){
+        if (tick > 1)
+            return false;
+        return interrupt;
     }
 
 }

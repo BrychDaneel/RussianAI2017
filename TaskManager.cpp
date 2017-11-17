@@ -42,4 +42,10 @@ namespace my{
             tasks.pop();
     }
 
+    bool TaskManager::canInterrupt(){
+        if (tasks.empty())
+            return true;
+        return tasks.front()->canInterrupt();
+    }
+
 }

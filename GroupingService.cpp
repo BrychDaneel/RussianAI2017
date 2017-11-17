@@ -21,7 +21,7 @@ namespace my{
 
         taskManager->addTask(new GridGroupTask(2, 2));
 
-        taskManager->addTask(new SpeedBarrierTask(0.1));
+        taskManager->addTask(new SpeedBarrierTask("Army", 0.1));
         taskManager->addTask(new ChangeStateTask(StateType::Idle));
         return true;
     }

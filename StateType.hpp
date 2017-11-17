@@ -4,7 +4,7 @@
 
 
 namespace my{
-    enum StateType{Unknown, Idle, Group, Attack, Figth, Save, Rush};
+    enum StateType{Unknown, Idle, Group, StartGroup, Attack, Figth, Save, Rush};
 }
 
 

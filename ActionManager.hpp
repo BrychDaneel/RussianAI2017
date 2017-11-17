@@ -14,6 +14,7 @@ namespace my{
             std::queue<model::Move> actions;
             MoveHelper& moveHelper;
             bool isNope = false;
+            bool isNuclear = false;
         public:
             ActionManager(MoveHelper& moveHelper);
             bool action();
@@ -25,6 +26,8 @@ namespace my{
             bool empty();
             void clear();
             bool lastIsNope();
+
+            bool lastIsNuclear();
 
             void nope();
 

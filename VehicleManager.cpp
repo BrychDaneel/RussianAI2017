@@ -77,6 +77,20 @@ namespace my{
             return result;
     }
 
+    const int VehicleManager::getNeighboardCount(const int unitId, const double radius) const{
+        model::Vehicle unit = (*vehicleMap.find(unitId)).second;
+        int owner = unit.getPlayerId();
+
+        int result = 0;
+        for (auto pair : vehicleMap){
+            if (pair.second.getPlayerId() == owner && pair.second.getId() != unitId)
+                if (pair.second.getDistanceTo(unit) <= radius)
+                    result++;
+
+        }
+        return result;
+    }
+
     const std::map<long long, model::Vehicle>& VehicleManager::getAll() const{
         return vehicleMap;
     }
@@ -116,4 +130,6 @@ namespace my{
     const std::map<long long, model::Vehicle>& VehicleManager::getenemyArrvs() const{
         return enemyArrvs;
     }
+
+
 }

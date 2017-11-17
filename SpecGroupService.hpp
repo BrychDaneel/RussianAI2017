@@ -1,21 +1,18 @@
 #pragma once
-#ifndef _MY_TEMP_SERVICE_HPP_
-#define _MY_TEMP_SERVICE_HPP_
+#ifndef _MY_SPEC_GROUP_SERVICE_HPP_
+#define _MY_SPEC_GROUP_SERVICE_HPP_
 
 
 #include "Service.hpp"
 
 
 namespace my{
-    class TempService : public Service{
+    class SpecGroupService : public Service{
         private:
             Enviroment* env;
             TaskManager* taskManager;
-            ActionManager* actionManager;
-            GroupManager* groupManager;
-            const int RATE = 60;
-            int sg = 1;
-            bool firstRun = true;
+            const VehicleManager * vehicleManager;
+            const int RATE = 0;
 
         public:
             virtual bool action();

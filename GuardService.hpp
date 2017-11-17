@@ -1,28 +1,30 @@
 #pragma once
-#ifndef _MY_NUCLEAR_SERVICE_HPP_
-#define _MY_NUCLEAR_SERVICE_HPP_
+#ifndef _MY_GUARD_SERVICE_HPP_
+#define _MY_GUARD_SERVICE_HPP_
 
 
 #include "Service.hpp"
 #include "model/Game.h"
 
 namespace my{
-    class NuclearService : public Service{
+    class GuardService : public Service{
         private:
-            const model::Game * game;
             const VehicleManager * vehicleManager;
             Enviroment * env;
             TaskManager * taskManager;
             GroupManager * groupManager;
-            int RATE = 120;
+            int RATE = 60;
 
-            double nuclearDist;
-            double minNuclearDistPercent;
-            double maxNuclearDistPercent;
-            double minVisionCof;
-            double nuclearCancelRadius;
-            double maxNuclearDist;
+            int guardInteresCount;
+            double guardInteresRadius;
+            double guardMinArmyDist;
+            double guardMaxDist;
+            double guardZoneRadius;
+            const char * groupName = "Guard";
 
+            bool first = true;
+
+            void firsRun();
         public:
             virtual bool action();
             virtual int getRate();
@@ -31,4 +33,5 @@ namespace my{
 }
 
 #endif
+
 

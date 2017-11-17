@@ -2,8 +2,15 @@
 
 
 namespace my{
-    SleepTask::SleepTask(int time){
+    SleepTask::SleepTask(int time, bool interrupt){
         this->time = time;
+        this->interrupt = interrupt;
+    }
+
+    bool SleepTask::canInterrupt(){
+        if (firstRun)
+            return false;
+        return interrupt;
     }
 
     void SleepTask::setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager){

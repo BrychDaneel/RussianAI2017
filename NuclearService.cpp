@@ -12,9 +12,11 @@ namespace my{
         this->game = env.getGame();
         this->taskManager = &taskManager;
         this->vehicleManager = env.getVehicleManager();
+        this->groupManager = &groupManager;
         this->env = &env;
 
         nuclearDist = env.getMagicConsts().getNuclearDist();
+        maxNuclearDist = env.getMagicConsts().getMaxNuclearDist();
         minNuclearDistPercent = env.getMagicConsts().getMinNuclearDistPercent();
         maxNuclearDistPercent = env.getMagicConsts().getMaxNuclearDistPercent();
         minVisionCof = env.getMagicConsts().getMinVisionCof();
@@ -29,13 +31,7 @@ namespace my{
         if (env->getState() != StateType::Figth)
             return false;
 
-        int cd = game->getBaseTacticalNuclearStrikeCooldown();
-
-        int last = -cd;
-        if (env->getData("LastNuclearStrike") != nullptr)
-            last = *(int *)env->getData("LastNuclearStrike");
-
-        if (cd > env->getWorld()->getTickIndex() - last)
+        if (!env->canNuclear())
             return false;
 
         if (env->getData("FrontX") == nullptr || env->getData("FrontY") == nullptr)
@@ -45,11 +41,16 @@ namespace my{
         double frontY = *(double*)env->getData("FrontY");
 
         double mX, mY;
-        Repos::getCenter(vehicleManager->getMy(), mX, mY);
+        std::vector<model::Vehicle> army = groupManager->getVehicles("Army");
+        Repos::getCenter(army, mX, mY);
 
         double nucleX = frontX - mX;
         double nucleY = frontY - mY;
         double d = hypot(nucleX, nucleY);
+
+        if (d > maxNuclearDist)
+            return false;
+
         nucleX = frontX + nucleX / d * nuclearDist;
         nucleY = frontY + nucleY / d * nuclearDist;
 
@@ -66,8 +67,6 @@ namespace my{
             double vision = vehicle.getVisionRange() * minVisionCof;
             if (vision * minNuclearDistPercent < dist && dist < vision * maxNuclearDistPercent){
                 taskManager->addTask(new NuclearAttackTask(vehicle.getId(), nucleX, nucleY));
-                lastNuclearStrike = env->getWorld()->getTickIndex();
-                env->putData("LastNuclearStrike", &lastNuclearStrike);
                 return true;
             }
         }

@@ -15,7 +15,7 @@ namespace my{
         instance.startActive = ActiveType::Normal;
         instance.startState = StateType::Idle;
         instance.minFightDamage = 300;
-        instance.defaultAttackSpeed = 0.8 * 0.4 * 0.6;
+        instance.defaultAttackSpeed = 0.7 * 0.4 * 0.6;
         instance.minRotateAngle = PI / 6;
         instance.minRotateDistance = 100;
         instance.minRotateTime = 240;
@@ -26,6 +26,7 @@ namespace my{
         instance.groupIntDistance = 200;
         instance.perfectBreakPercent = 0.5;
         instance.nuclearDist = 50;
+        instance.maxNuclearDist = 100;
         instance.minNuclearDistPercent = 0.7;
         instance.maxNuclearDistPercent = 0.85;
         instance.minVisionCof = 0.6;
@@ -33,6 +34,18 @@ namespace my{
         instance.rushCof = 3;
         instance.minRushTick = 15000;
         instance.nuclearCancelRadius = 30;
+        instance.pascudaDelta = 20;
+        instance.maxPascudaNuclearDist = 96;
+        instance.minPascudaNuclearDist = 56;
+        instance.maxPascudaDist = 12;
+        instance.guardInteresCount = 5;
+        instance.guardInteresRadius = 32;
+        instance.guardMinArmyDist = 30;
+        instance.guardMaxDist = 25;
+        instance.guardZoneRadius = 800;
+        instance.farNuclearCount = 100;
+        instance.minFarRange = 40;
+        //instance.addRange = ;
         return instance;
     }
 
@@ -129,4 +142,57 @@ namespace my{
     const double MagicConsts::getNuclearCancelRadius() const{
         return nuclearCancelRadius;
     }
+
+    const double MagicConsts::getMaxNuclearDist() const{
+        return maxNuclearDist;
+    }
+
+    const double MagicConsts::getMaxPascudaNuclearDist() const{
+        return maxPascudaNuclearDist;
+    }
+
+    const double MagicConsts::getMinPascudaNuclearDist() const{
+        return minPascudaNuclearDist;
+    }
+
+    const double MagicConsts::getPascudaDelta() const{
+        return pascudaDelta;
+    }
+
+    const double MagicConsts::getMaxPascudaDist() const{
+        return maxPascudaDist;
+    }
+
+    const int MagicConsts::getGuardInteresCount() const{
+      return guardInteresCount;
+    }
+
+    const double MagicConsts::getGuardInteresRadius() const{
+        return guardInteresRadius;
+    }
+
+    const double MagicConsts::getGuardMinArmyDist() const{
+        return guardMinArmyDist;
+    }
+
+    const double MagicConsts::getGuardMaxDist() const{
+        return guardMaxDist;
+    }
+
+    const double MagicConsts::getGuardZoneRadius() const{
+        return guardZoneRadius;
+    }
+
+    const double MagicConsts::getFarNuclearCount() const{
+        return farNuclearCount;
+    }
+
+    const double MagicConsts::getMinFarRange() const{
+        return minFarRange;
+    }
+
+    const double MagicConsts::getAddRange() const{
+        return addRange;
+    }
+
 }

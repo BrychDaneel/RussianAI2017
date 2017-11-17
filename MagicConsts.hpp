@@ -34,6 +34,19 @@ namespace my{
             double loseCof;
             double minRushTick;
             double nuclearCancelRadius;
+            double maxNuclearDist;
+            double pascudaDelta;
+            double minPascudaNuclearDist;
+            double maxPascudaNuclearDist;
+            double maxPascudaDist;
+            int guardInteresCount;
+            double guardInteresRadius;
+            double guardMinArmyDist;
+            double guardMaxDist;
+            double guardZoneRadius;
+            double farNuclearCount;
+            double minFarRange;
+            double addRange;
         public:
             MagicConsts();
             static MagicConsts getDefaulInstance();
@@ -60,6 +73,19 @@ namespace my{
             const double getRushCof() const;
             const double getMinRushTick() const;
             const double getNuclearCancelRadius() const;
+            const double getMaxNuclearDist() const;
+            const double getPascudaDelta() const;
+            const double getMaxPascudaNuclearDist() const;
+            const double getMinPascudaNuclearDist() const;
+            const double getMaxPascudaDist() const;
+            const int getGuardInteresCount() const;
+            const double getGuardInteresRadius() const;
+            const double getGuardMinArmyDist() const;
+            const double getGuardMaxDist() const;
+            const double getGuardZoneRadius() const;
+            const double getFarNuclearCount() const;
+            const double getMinFarRange() const;
+            const double getAddRange() const;
     };
 }
 

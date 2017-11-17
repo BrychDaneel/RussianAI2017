@@ -15,10 +15,17 @@ namespace my{
         private:
             const SpeedManager * speedManager;
             double maxSpeed;
+            GroupManager * groupManager;
+            bool interrupt;
+            std::string groupName;
+            bool useGroup;
+            const VehicleManager * vehicleManager;
         public:
-            SpeedBarrierTask(double maxSpeed);
+            SpeedBarrierTask(double maxSpeed, bool interrupt=true);
+            SpeedBarrierTask(const char * groupName, double maxSpeed, bool interrupt=true);
             virtual bool action();
             virtual void setup(Enviroment& env, ActionManager& actionManager, GroupManager& groupManager);
+            virtual bool canInterrupt();
     };
 }
 #endif

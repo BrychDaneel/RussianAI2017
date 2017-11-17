@@ -24,27 +24,28 @@ namespace my{
     }
 
     bool TempService::action(){
+        if (!groupManager->exist("Pascuda1") || !groupManager->exist("Pascuda2") || !groupManager->exist("Guard"))
+            return false;
 
-        /*double minX, minY, maxX, maxY;
-        Repos::getBox(env->getVehicleManager()->getmyArrvs(), minX, minY, maxX, maxY);
-        std::cout << minX << " " << minY << " " << maxX << " " << maxY << std::endl;
-        Repos::getBox(env->getVehicleManager()->getmyFighters(), minX, minY, maxX, maxY);
-        std::cout << minX << " " << minY << " " << maxX << " " << maxY << std::endl;
-        Repos::getBox(env->getVehicleManager()->getmyHelicopters(), minX, minY, maxX, maxY);
-        std::cout << minX << " " << minY << " " << maxX << " " << maxY << std::endl;
-        Repos::getBox(env->getVehicleManager()->getmyIFVs(), minX, minY, maxX, maxY);
-        std::cout << minX << " " << minY << " " << maxX << " " << maxY << std::endl;
-        Repos::getBox(env->getVehicleManager()->getmyTanks(), minX, minY, maxX, maxY);
-        std::cout << minX << " " << minY << " " << maxX << " " << maxY << std::endl;
+        if (firstRun){
+            firstRun = false;
+            taskManager->addTask(new SelectTask("Pascuda1"));
+            taskManager->addTask(new AsyncDeltaTask(0, 500));
+            taskManager->addTask(new SelectTask("Pascuda2"));
+            taskManager->addTask(new AsyncDeltaTask(0, 400));
+            taskManager->addTask(new SelectTask("Guard"));
+            taskManager->addTask(new AsyncDeltaTask(0, 300));
+            taskManager->addTask(new SpeedBarrierTask("Pascuda1", 0.1));
+            return true;
+        }
 
-        taskManager->addTask(new SelectTask("Army"));
-        taskManager->addTask(new AsyncDeltaTask(512, 0));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
-        taskManager->addTask(new AsyncRotateTask(512,512,3.14,0.0,0.0));
-        taskManager->addTask(new SpeedBarrierTask(0.1));
-        taskManager->addTask(new AsyncRotateTask(512,512,3.14,0.0,0.0));*/
-        taskManager->addTask(new SleepTask(7000));
-        return false;
+        taskManager->addTask(new SelectTask("Pascuda1"));
+        taskManager->addTask(new AsyncDeltaTask(0, sg*100));
+        taskManager->addTask(new SleepTask(50));
+
+        sg *= -1;
+
+        return true;
     }
 }
 

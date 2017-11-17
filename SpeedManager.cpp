@@ -1,7 +1,7 @@
 #include "SpeedManager.hpp"
 
 
-#define SQR(x) (x) * (x)
+#define SQR(x) ((x) * (x))
 #include <cmath>
 
 

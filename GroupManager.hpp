@@ -20,6 +20,7 @@ namespace my{
             int maxId;
             ActionManager & actionManager;
             Enviroment & env;
+            const VehicleManager * vehicleManager;
         public:
             GroupManager(ActionManager & actionManager, Enviroment & env);
             void setup();
@@ -28,7 +29,8 @@ namespace my{
             const int bind(std::string name);
 
             void describe(int id, std::string name);
-            const int getId(std::string name);
+            const int getId(std::string name) const;
+            const bool exist(std::string name) const;
             const std::string getName(int id);
 
             void free(int id);
@@ -37,6 +39,9 @@ namespace my{
             void select(std::string name);
             void select(int id);
             const int getMaxId();
+
+            const std::vector<model::Vehicle> getVehicles(const int id) const;
+            const std::vector<model::Vehicle> getVehicles(const std::string name)const;
     };
 }
 

@@ -47,18 +47,22 @@ namespace my{
         double squarMinDist = minFarRange * minFarRange;
         double delta = 2 + env->getMagicConsts().getDefaultAttackSpeed() * env->getGame()->getTacticalNuclearStrikeDelay();
 
+        std::vector<int> neighboards;
+        for (size_t i=0; i<enemys.size(); i++){
+            neighboards.push_back(0);
+            for (size_t ii=0; ii<enemys.size(); ii++)
+                if (enemys[i].getSquaredDistanceTo(enemys[ii]) < 2500)
+                    neighboards[i]++;
+        }
+
         for (size_t i=0; i<army.size(); i++){
             double squarVision = SQR(env->getTryVisionRange(army[i].getId()) - delta);
             for (size_t ii=0; ii<enemys.size(); ii++){
                 double squarDist = army[i].getSquaredDistanceTo(enemys[ii]);
                 if ( squarMinDist < squarDist && squarDist < squarVision){
-                    int neighboards = 0;
-                    for (size_t iii=0; iii<enemys.size(); iii++)
-                        if (enemys[ii].getSquaredDistanceTo(enemys[iii]) < 2500)
-                            neighboards++;
 
-                    if (neighboards > maxCount){
-                        maxCount = neighboards;
+                    if (neighboards[i] > maxCount){
+                        maxCount = neighboards[i];
                         maxMyId = army[i].getId();
                         maxEnemyX = enemys[ii].getX();
                         maxEnemyY = enemys[ii].getY();

@@ -146,7 +146,7 @@ namespace my{
                 return false;
         }
 
-        taskManager->addTask(new SelectTask(pascudaName));
+        taskManager->addTask(new SelectTask(pascudaName, false));
         taskManager->addTask(new StopTask());
         taskManager->addTask(new NuclearAttackTask(msp.getId(), nucleX, nucleY));
         taskManager->addTask(new SleepTask(env->getGame()->getTacticalNuclearStrikeDelay()));

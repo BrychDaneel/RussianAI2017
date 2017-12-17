@@ -145,7 +145,7 @@
 1510418958 source:/home/daneel/prog/ai/CodeWars/solution/model/World.cpp
 	"World.h"
 
-1510953165 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
+1510953747 source:/home/daneel/prog/ai/CodeWars/solution/MyStrategy.cpp
 	"MyStrategy.h"
 	"MagicConsts.hpp"
 	"GroupingService.hpp"
@@ -845,7 +845,7 @@
 1510833710 /home/daneel/prog/ai/CodeWars/solution/WaitTask.hpp
 	"Task.hpp"
 
-1510951550 source:/home/daneel/prog/ai/CodeWars/solution/FarNuclearService.cpp
+1510954884 source:/home/daneel/prog/ai/CodeWars/solution/FarNuclearService.cpp
 	"FarNuclearService.hpp"
 	"Repos.hpp"
 	<cmath>

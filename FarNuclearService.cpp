@@ -47,7 +47,7 @@ namespace my{
         double squarMinDist = minFarRange * minFarRange;
         double delta = 2 + env->getMagicConsts().getDefaultAttackSpeed() * env->getGame()->getTacticalNuclearStrikeDelay();
 
-        std::vector<int> neighboards;
+        std::vector<double> neighboards;
         for (size_t i=0; i<enemys.size(); i++){
             neighboards.push_back(0);
             for (size_t ii=0; ii<enemys.size(); ii++)

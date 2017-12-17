@@ -65,7 +65,7 @@ MyStrategy::MyStrategy() :
     serviceManager.addService(new my::FrontMoveService());
 
     serviceManager.addService(new my::NuclearService());
-    //serviceManager.addService(new my::FarNuclearService());
+    serviceManager.addService(new my::FarNuclearService());
 
     serviceManager.addService(new my::RegroupService());
 
